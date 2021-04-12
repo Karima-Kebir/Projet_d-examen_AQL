@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace exam3_AQL
+namespace Exam3_AQL
 {
     class Note
     {

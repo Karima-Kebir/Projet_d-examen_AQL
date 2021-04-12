@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Les informations générales relatives à un assembly dépendent de
 // l'ensemble d'attributs suivant. Changez les valeurs de ces attributs pour modifier les informations
 // associées à un assembly.
-[assembly: AssemblyTitle("exam3_AQL")]
+[assembly: AssemblyTitle("Exam3_AQL")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("HP Inc.")]
-[assembly: AssemblyProduct("exam3_AQL")]
+[assembly: AssemblyProduct("Exam3_AQL")]
 [assembly: AssemblyCopyright("Copyright © HP Inc. 2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Le GUID suivant est pour l'ID de la typelib si ce projet est exposé à COM
-[assembly: Guid("d10bfad8-3e20-4250-a9ef-38ea94918d9f")]
+[assembly: Guid("77558623-c8a2-4055-82d2-fa5d606814d3")]
 
 // Les informations de version pour un assembly se composent des quatre valeurs suivantes :
 //

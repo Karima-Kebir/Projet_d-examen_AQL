@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace exam3_AQL
+namespace Exam3_AQL
 {
     static class Program
     {

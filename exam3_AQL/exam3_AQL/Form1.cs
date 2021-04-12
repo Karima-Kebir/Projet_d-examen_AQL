@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace exam3_AQL
+namespace Exam3_AQL
 {
     public partial class Form1 : Form
     {
