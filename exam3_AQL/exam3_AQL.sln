@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exam3_AQL", "exam3_AQL\exam3_AQL.csproj", "{D10BFAD8-3E20-4250-A9EF-38EA94918D9F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D10BFAD8-3E20-4250-A9EF-38EA94918D9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D10BFAD8-3E20-4250-A9EF-38EA94918D9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D10BFAD8-3E20-4250-A9EF-38EA94918D9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D10BFAD8-3E20-4250-A9EF-38EA94918D9F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C28ED343-6C03-4A9D-8DC4-A98C0938F3C1}
+	EndGlobalSection
+EndGlobal
