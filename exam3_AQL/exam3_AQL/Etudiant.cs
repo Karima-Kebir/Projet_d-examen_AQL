@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Exam3_AQL
 {
-    class Etudiant
+    public class Etudiant
     {
         public int NumeroEtudiant { get; set; }
         public string Nom { get; set; }
@@ -18,6 +18,24 @@ namespace Exam3_AQL
             this.NumeroEtudiant = numeroEtudiant;
             this.Nom = nom;
             this.Prenom = prenom;
+        }
+
+        public override string ToString()
+        {
+            return base.ToString() + "\n" +
+                 "Numéro Etudiant : " + this.NumeroEtudiant + "\n" +
+                 "Nom : " + this.Nom + "\n" +
+                 "Prenom : " + this.Prenom;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (!(obj is Etudiant)) return false;
+
+            Etudiant etudiant = (Etudiant)obj;
+            return etudiant.NumeroEtudiant == this.NumeroEtudiant &&
+                etudiant.Nom == this.Nom &&
+                etudiant.NumeroEtudiant == this.NumeroEtudiant;
         }
     }
 }

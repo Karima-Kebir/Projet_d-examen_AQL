@@ -59,5 +59,10 @@ namespace Exam3_AQL
         {
 
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
