@@ -27,7 +27,7 @@ namespace Exam3_AQL
         {
             try
             {
-                Note note = new Note(int.Parse(textNumEtudiant.Text), textCodeCours.Text, double.Parse(textNoteCoursEtudaint.Text));
+               Note note = new Note(int.Parse(textNumEtudiant.Text), textCodeCours.Text, double.Parse(textNoteCoursEtudaint.Text));
                 Cours cours = new Cours(int.Parse(textNumCours.Text), textCodeCours.Text, textTitreCours.Text, note);
                 Cours.ListeDeCours.Add(cours);
            
@@ -43,6 +43,21 @@ namespace Exam3_AQL
                 string message = "Des nombres sont requis au nivreau des champs : 'Numéro d'étudiant' , 'Numéro de cours' et 'Note'";
                 MessageBox.Show(message);
             }
+        }
+
+        private void textNumCours_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonAjoutEtudiant_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
