@@ -21,5 +21,28 @@ namespace Exam3_AQL
         {
 
         }
+
+        //Bouton Ajouter cours
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Note note = new Note(int.Parse(textNumEtudiant.Text), textCodeCours.Text, double.Parse(textNoteCoursEtudaint.Text));
+                Cours cours = new Cours(int.Parse(textNumCours.Text), textCodeCours.Text, textTitreCours.Text, note);
+                Cours.ListeDeCours.Add(cours);
+           
+                dataGridView.Rows.Add(cours.NumeroCours , cours.CodeCours , cours.TitreCours , cours.LaNote.NoteCours);
+
+                textNumCours.Text = "";
+                textCodeCours.Text = "";
+                textTitreCours.Text = "";
+                textNoteCoursEtudaint.Text = "";
+            }
+            catch (FormatException )
+            {
+                string message = "Des nombres sont requis au nivreau des champs : 'Numéro d'étudiant' , 'Numéro de cours' et 'Note'";
+                MessageBox.Show(message);
+            }
+        }
     }
 }

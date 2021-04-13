@@ -9,30 +9,23 @@ namespace Exam3_AQL
    public class Cours
 
     {
-        /// <summary>
-        /// Proprités de la classe cours
-        /// </summary>
-
+        // Proprités de la classe cours
         public int NumeroCours { get; set; }
         public string CodeCours { get; set; }
         public string TitreCours { get; set; }
+        public Note LaNote { get; set; }
+        public static List<Cours> ListeDeCours { get; set; } = new List<Cours>();
 
-
-        /// <summary>
-        /// Constructeur initialisant tous les attributs de la classe cours
-        /// </summary>
-        public Cours(int numeroCours, string codeCours, string titreCours)
+        // Constructeur initialisant tous les attributs de la classe cours
+        public Cours(int numeroCours, string codeCours, string titreCours, Note note)
         {
             this.NumeroCours = numeroCours;
             this.CodeCours = codeCours;
             this.TitreCours = titreCours;
+            this.LaNote = note;
         }
 
-
-        /// <summary>
-        /// Méthode ToString permetant de convertir l'objet cours vers une chaîne de caractère
-        /// </summary>
-        /// <returns></returns>
+        // Méthode ToString permettant de convertir l'objet cours vers une chaîne de caractère
         public override string ToString()
         {
             return base.ToString() + "\n" +
