@@ -9,6 +9,7 @@ namespace Exam3_AQL
    public class Cours
 
     {
+    //Test!
         /// <summary>
         /// Proprités de la classe cours
         /// </summary>
