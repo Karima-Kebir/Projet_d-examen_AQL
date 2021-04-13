@@ -20,5 +20,13 @@ namespace Exam3_AQL
             this.NoteCours = noteCours;
         }
 
+        public override string ToString()
+        {
+            return base.ToString() + "\n" +
+                 "Numéro Etudiant : " + this.NumeroEtudiant + "\n" +
+                 "Code Cours : " + this.CodeCours + "\n" +
+                 "Note Cours : " + this.NoteCours;
+        }
+
     }
 }
