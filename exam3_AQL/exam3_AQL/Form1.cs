@@ -64,8 +64,6 @@ namespace Exam3_AQL
 
         private void buttonAjoutEtudiant_Click(object sender, EventArgs e)
         {
-            try
-            {
              if(textNomEtudiant.Text !="" && textPrenomEtudiant.Text != "")
                 {
                     Etudiant etudiant = new Etudiant(textNomEtudiant.Text, textPrenomEtudiant.Text);
@@ -93,12 +91,8 @@ namespace Exam3_AQL
                 {
                     MessageBox.Show("Vous devez saisir tous les champs");
                 }
-            }
             
-            catch (FormatException)
-            {
-                MessageBox.Show("Vous devez saisir les types convenables");
-            }
+        
         }
         //remplir le comboBox avec les numeros des etudiants deja saisies
         private void remplirComboEtudiant(List<Etudiant> listetudiant)
