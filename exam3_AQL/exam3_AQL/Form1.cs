@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -86,7 +86,6 @@ namespace Exam3_AQL
 
                     int increment = int.Parse(textNumEtudiant.Text);
                     increment++;
-
 
                     textNomEtudiant.Clear();
                     textPrenomEtudiant.Clear();
@@ -192,5 +191,6 @@ namespace Exam3_AQL
                 MessageBox.Show("Vous devez saisir un nombre dans le champs : Numéro de cours");
             }
         }
+
     }
 }

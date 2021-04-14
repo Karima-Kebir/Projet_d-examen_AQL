@@ -1,4 +1,4 @@
-﻿
+
 namespace Exam3_AQL
 {
     partial class Form1
@@ -116,6 +116,7 @@ namespace Exam3_AQL
             this.textNoteCoursEtudaint.Name = "textNoteCoursEtudaint";
             this.textNoteCoursEtudaint.Size = new System.Drawing.Size(95, 22);
             this.textNoteCoursEtudaint.TabIndex = 10;
+
             // 
             // label6
             // 
