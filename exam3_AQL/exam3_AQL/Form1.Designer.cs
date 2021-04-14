@@ -118,7 +118,7 @@ namespace Exam3_AQL
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 41);
+            this.label4.Location = new System.Drawing.Point(6, 44);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(117, 17);
             this.label4.TabIndex = 6;
@@ -126,7 +126,7 @@ namespace Exam3_AQL
             // 
             // textNumCours
             // 
-            this.textNumCours.Location = new System.Drawing.Point(129, 33);
+            this.textNumCours.Location = new System.Drawing.Point(129, 44);
             this.textNumCours.Name = "textNumCours";
             this.textNumCours.Size = new System.Drawing.Size(127, 22);
             this.textNumCours.TabIndex = 7;
@@ -134,7 +134,7 @@ namespace Exam3_AQL
             // 
             // textCodeCours
             // 
-            this.textCodeCours.Location = new System.Drawing.Point(129, 65);
+            this.textCodeCours.Location = new System.Drawing.Point(129, 70);
             this.textCodeCours.Name = "textCodeCours";
             this.textCodeCours.Size = new System.Drawing.Size(127, 22);
             this.textCodeCours.TabIndex = 9;
@@ -142,7 +142,7 @@ namespace Exam3_AQL
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 68);
+            this.label5.Location = new System.Drawing.Point(6, 71);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(100, 17);
             this.label5.TabIndex = 8;
@@ -174,7 +174,7 @@ namespace Exam3_AQL
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 96);
+            this.label7.Location = new System.Drawing.Point(6, 99);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(96, 17);
             this.label7.TabIndex = 10;
@@ -198,6 +198,7 @@ namespace Exam3_AQL
             this.buttonEnregistrerNoteCours.TabIndex = 16;
             this.buttonEnregistrerNoteCours.Text = "Enregistrer";
             this.buttonEnregistrerNoteCours.UseVisualStyleBackColor = true;
+            this.buttonEnregistrerNoteCours.Click += new System.EventHandler(this.buttonEnregistrerNoteCours_Click);
             // 
             // label8
             // 
