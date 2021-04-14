@@ -8,7 +8,10 @@ namespace Exam3_AQL
 {
    public class Cours
 
-    {   // Proprités de la classe cours
+   
+    {  
+        // Proprités de la classe cours
+
         public int NumeroCours { get; set; }
         public string CodeCours { get; set; }
         public string TitreCours { get; set; }
@@ -32,12 +35,21 @@ namespace Exam3_AQL
                  "Titre : " + this.TitreCours;
         }
 
-    }
+        public override bool Equals(object obj)
+        {
+            if (!(obj is Cours)) return false;
+
+            Cours cours = (Cours)obj;
+            return cours.NumeroCours == this.NumeroCours &&
+                cours.TitreCours == this.TitreCours &&
+                cours.CodeCours == this.CodeCours;
+
+        }
 
 
 
 
-
+ }
 
 
 
