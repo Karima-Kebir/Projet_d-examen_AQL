@@ -6,7 +6,27 @@ using System.Threading.Tasks;
 
 namespace Exam3_AQL
 {
-    class Note
+    public class Note
     {
+        public int NumeroEtudiant { get; set; }
+        public string CodeCours { get; set; }
+        public double NoteCours { get; set; }
+
+       
+        public Note(int numeroEtudiant, string codeCours, double noteCours)
+        {
+            this.NumeroEtudiant = numeroEtudiant;
+            this.CodeCours = codeCours;
+            this.NoteCours = noteCours;
+        }
+
+        public override string ToString()
+        {
+            return base.ToString() + "\n" +
+                 "Numéro Etudiant : " + this.NumeroEtudiant + "\n" +
+                 "Code Cours : " + this.CodeCours + "\n" +
+                 "Note Cours : " + this.NoteCours;
+        }
+
     }
 }
