@@ -45,31 +45,21 @@ namespace Exam3_AQL
 
         private void buttonAjoutEtudiant_Click(object sender, EventArgs e)
         {
-            int increment;
             Etudiant etudiant = new Etudiant (textNomEtudiant.Text, textPrenomEtudiant.Text);
 
+            textNumEtudiant.Text = etudiant.NumeroEtudiant + "";
 
-            if (textNomEtudiant.Text == "") { 
-                MessageBox.Show("Entrer le nom SVP !");
-                increment--;
-            }
-            else if (textPrenomEtudiant.Text == "") MessageBox.Show("Entrer le prénom SVP!");
-            else
-            {
+            dataGridViewEtudiant.Rows.Add(textNumEtudiant.Text , textNomEtudiant.Text, textPrenomEtudiant.Text);
+            
+            ListeEtudiants.Add(etudiant);
 
-                textNumEtudiant.Text = etudiant.NumeroEtudiant + "";
+            int increment = int.Parse(textNumEtudiant.Text);
+            increment++;
 
-                dataGridViewEtudiant.Rows.Add(textNumEtudiant.Text, textNomEtudiant.Text, textPrenomEtudiant.Text);
 
-                ListeEtudiants.Add(etudiant);
-
-                increment = int.Parse(textNumEtudiant.Text);
-                increment++;
-
-                textNomEtudiant.Clear();
-                textPrenomEtudiant.Clear();
-                textNumEtudiant.Text = increment + "";
-            }
+            textNomEtudiant.Clear();
+            textPrenomEtudiant.Clear();
+            textNumEtudiant.Text = increment + "";
         } 
 
         private void groupBox1_Enter(object sender, EventArgs e)
