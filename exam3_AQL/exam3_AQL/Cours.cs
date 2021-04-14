@@ -7,8 +7,6 @@ using System.Threading.Tasks;
 namespace Exam3_AQL
 {
    public class Cours
-
-   
     {  
         // Proprités de la classe cours
 

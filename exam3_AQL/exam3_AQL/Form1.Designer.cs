@@ -107,7 +107,7 @@ namespace Exam3_AQL
             this.textPrenomEtudiant.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textPrenomEtudiant.Name = "textPrenomEtudiant";
             this.textPrenomEtudiant.Size = new System.Drawing.Size(139, 22);
-            this.textPrenomEtudiant.TabIndex = 5;
+            this.textPrenomEtudiant.TabIndex = 2;
             // 
             // textNoteCoursEtudaint
             // 
@@ -115,7 +115,8 @@ namespace Exam3_AQL
             this.textNoteCoursEtudaint.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textNoteCoursEtudaint.Name = "textNoteCoursEtudaint";
             this.textNoteCoursEtudaint.Size = new System.Drawing.Size(95, 22);
-            this.textNoteCoursEtudaint.TabIndex = 13;
+            this.textNoteCoursEtudaint.TabIndex = 10;
+
             // 
             // label6
             // 
@@ -132,9 +133,10 @@ namespace Exam3_AQL
             this.buttonEnregistrerNoteCours.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonEnregistrerNoteCours.Name = "buttonEnregistrerNoteCours";
             this.buttonEnregistrerNoteCours.Size = new System.Drawing.Size(149, 25);
-            this.buttonEnregistrerNoteCours.TabIndex = 16;
+            this.buttonEnregistrerNoteCours.TabIndex = 11;
             this.buttonEnregistrerNoteCours.Text = "Enregistrer";
             this.buttonEnregistrerNoteCours.UseVisualStyleBackColor = true;
+            this.buttonEnregistrerNoteCours.Click += new System.EventHandler(this.buttonEnregistrerNoteCours_Click);
             // 
             // label8
             // 
@@ -192,7 +194,7 @@ namespace Exam3_AQL
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
             this.dataGridViewEtudiant.Location = new System.Drawing.Point(12, 158);
-            this.dataGridViewEtudiant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridViewEtudiant.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewEtudiant.Name = "dataGridViewEtudiant";
             this.dataGridViewEtudiant.RowHeadersWidth = 51;
             this.dataGridViewEtudiant.RowTemplate.Height = 24;
@@ -235,7 +237,7 @@ namespace Exam3_AQL
             this.textNomEtudiant.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textNomEtudiant.Name = "textNomEtudiant";
             this.textNomEtudiant.Size = new System.Drawing.Size(139, 22);
-            this.textNomEtudiant.TabIndex = 3;
+            this.textNomEtudiant.TabIndex = 1;
             // 
             // buttonAjoutEtudiant
             // 
@@ -243,7 +245,7 @@ namespace Exam3_AQL
             this.buttonAjoutEtudiant.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonAjoutEtudiant.Name = "buttonAjoutEtudiant";
             this.buttonAjoutEtudiant.Size = new System.Drawing.Size(140, 30);
-            this.buttonAjoutEtudiant.TabIndex = 25;
+            this.buttonAjoutEtudiant.TabIndex = 3;
             this.buttonAjoutEtudiant.Text = "Ajouter un Etudiant";
             this.buttonAjoutEtudiant.UseVisualStyleBackColor = true;
             this.buttonAjoutEtudiant.Click += new System.EventHandler(this.buttonAjoutEtudiant_Click);
@@ -354,7 +356,7 @@ namespace Exam3_AQL
             this.comboNumCours.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboNumCours.Name = "comboNumCours";
             this.comboNumCours.Size = new System.Drawing.Size(152, 24);
-            this.comboNumCours.TabIndex = 31;
+            this.comboNumCours.TabIndex = 9;
             // 
             // label11
             // 
@@ -381,7 +383,7 @@ namespace Exam3_AQL
             this.comboNumEtudiant.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboNumEtudiant.Name = "comboNumEtudiant";
             this.comboNumEtudiant.Size = new System.Drawing.Size(152, 24);
-            this.comboNumEtudiant.TabIndex = 21;
+            this.comboNumEtudiant.TabIndex = 8;
             this.comboNumEtudiant.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // groupBox4
@@ -414,10 +416,10 @@ namespace Exam3_AQL
             // buttonAjoutCours
             // 
             this.buttonAjoutCours.Location = new System.Drawing.Point(392, 87);
-            this.buttonAjoutCours.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAjoutCours.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAjoutCours.Name = "buttonAjoutCours";
             this.buttonAjoutCours.Size = new System.Drawing.Size(122, 28);
-            this.buttonAjoutCours.TabIndex = 14;
+            this.buttonAjoutCours.TabIndex = 7;
             this.buttonAjoutCours.Text = "Ajouter un cours";
             this.buttonAjoutCours.UseVisualStyleBackColor = true;
             this.buttonAjoutCours.Click += new System.EventHandler(this.buttonAjoutCours_Click);
@@ -425,10 +427,10 @@ namespace Exam3_AQL
             // textTitreCours
             // 
             this.textTitreCours.Location = new System.Drawing.Point(172, 95);
-            this.textTitreCours.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textTitreCours.Margin = new System.Windows.Forms.Padding(4);
             this.textTitreCours.Name = "textTitreCours";
             this.textTitreCours.Size = new System.Drawing.Size(168, 22);
-            this.textTitreCours.TabIndex = 11;
+            this.textTitreCours.TabIndex = 6;
             // 
             // label7
             // 
@@ -443,10 +445,10 @@ namespace Exam3_AQL
             // textCodeCours
             // 
             this.textCodeCours.Location = new System.Drawing.Point(172, 65);
-            this.textCodeCours.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textCodeCours.Margin = new System.Windows.Forms.Padding(4);
             this.textCodeCours.Name = "textCodeCours";
             this.textCodeCours.Size = new System.Drawing.Size(168, 22);
-            this.textCodeCours.TabIndex = 9;
+            this.textCodeCours.TabIndex = 5;
             // 
             // label5
             // 
@@ -466,7 +468,7 @@ namespace Exam3_AQL
             this.Column2,
             this.Column3});
             this.dataGridView.Location = new System.Drawing.Point(8, 149);
-            this.dataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowHeadersWidth = 51;
             this.dataGridView.RowTemplate.Height = 24;
@@ -506,10 +508,10 @@ namespace Exam3_AQL
             // textNumCours
             // 
             this.textNumCours.Location = new System.Drawing.Point(172, 35);
-            this.textNumCours.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textNumCours.Margin = new System.Windows.Forms.Padding(4);
             this.textNumCours.Name = "textNumCours";
             this.textNumCours.Size = new System.Drawing.Size(168, 22);
-            this.textNumCours.TabIndex = 7;
+            this.textNumCours.TabIndex = 4;
             // 
             // groupBox1
             // 
@@ -522,9 +524,9 @@ namespace Exam3_AQL
             this.groupBox1.Controls.Add(this.textTitreCours);
             this.groupBox1.Controls.Add(this.buttonAjoutCours);
             this.groupBox1.Location = new System.Drawing.Point(592, 20);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(523, 304);
             this.groupBox1.TabIndex = 26;
             this.groupBox1.TabStop = false;
