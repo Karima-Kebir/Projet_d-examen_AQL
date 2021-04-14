@@ -8,14 +8,15 @@ namespace Exam3_AQL
 {
     public class Etudiant
     {
+        private static int nombreEtudiants = 0;
         public int NumeroEtudiant { get; set; }
         public string Nom { get; set; }
         public string Prenom { get; set; }
 
         //Constructeur
-        public Etudiant(int numeroEtudiant, string nom, string prenom)
+        public Etudiant(string nom, string prenom)
         {
-            this.NumeroEtudiant = numeroEtudiant;
+            this.NumeroEtudiant = ++nombreEtudiants;
             this.Nom = nom;
             this.Prenom = prenom;
         }
@@ -35,7 +36,12 @@ namespace Exam3_AQL
             Etudiant etudiant = (Etudiant)obj;
             return etudiant.NumeroEtudiant == this.NumeroEtudiant &&
                 etudiant.Nom == this.Nom &&
-                etudiant.NumeroEtudiant == this.NumeroEtudiant;
+                etudiant.Prenom == this.Prenom;
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
         }
     }
 }
