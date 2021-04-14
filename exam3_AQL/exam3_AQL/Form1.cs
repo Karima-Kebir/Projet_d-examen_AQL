@@ -22,7 +22,7 @@ namespace Exam3_AQL
         public Form1()
         {
             InitializeComponent();
-            
+            textNumEtudiant.Text = 1 + "";
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -35,8 +35,6 @@ namespace Exam3_AQL
         //Bouton Ajouter cours
         private void buttonAjoutCours_Click(object sender, EventArgs e)
         {
-           try
-            {
                 if (textCodeCours.Text != "" && textTitreCours.Text != "")
                 {
                     Cours cours = new Cours(int.Parse(textNumCours.Text), textCodeCours.Text, textTitreCours.Text);
@@ -56,12 +54,6 @@ namespace Exam3_AQL
                 {
                     MessageBox.Show("Vous devez saisir tous les champs");
                 }
-            }
-            catch (FormatException)
-            {
-                MessageBox.Show("Vous devez saisir un nombre dans le champs : Numéro de cours");
-            }
-
         }
 
   
