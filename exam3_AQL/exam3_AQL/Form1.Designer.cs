@@ -30,37 +30,25 @@ namespace Exam3_AQL
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textNumEtudiant = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textPrenomEtudiant = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textNumCours = new System.Windows.Forms.TextBox();
-            this.textCodeCours = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.textNoteCoursEtudaint = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textTitreCours = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.buttonAjoutCours = new System.Windows.Forms.Button();
             this.buttonEnregistrerNoteCours = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.comboCodeEtudiant = new System.Windows.Forms.ComboBox();
             this.buttonAfficherReleve = new System.Windows.Forms.Button();
-            this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewEtudiant = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label12 = new System.Windows.Forms.Label();
             this.textNomEtudiant = new System.Windows.Forms.TextBox();
             this.buttonAjoutEtudiant = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textNumEtudiant = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,30 +62,35 @@ namespace Exam3_AQL
             this.comboNumEtudiant = new System.Windows.Forms.ComboBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.buttonExpotTxt = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.buttonAjoutCours = new System.Windows.Forms.Button();
+            this.textTitreCours = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textCodeCours = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textNumCours = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEtudiant)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 44);
+            this.label1.Location = new System.Drawing.Point(10, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(124, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Numéro d\'étudiant";
-            // 
-            // textNumEtudiant
-            // 
-            this.textNumEtudiant.Location = new System.Drawing.Point(148, 41);
-            this.textNumEtudiant.Name = "textNumEtudiant";
-            this.textNumEtudiant.Size = new System.Drawing.Size(139, 22);
-            this.textNumEtudiant.TabIndex = 1;
             // 
             // label3
             // 
@@ -115,39 +108,6 @@ namespace Exam3_AQL
             this.textPrenomEtudiant.Size = new System.Drawing.Size(139, 22);
             this.textPrenomEtudiant.TabIndex = 5;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 41);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(117, 17);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Numero de cours";
-            // 
-            // textNumCours
-            // 
-            this.textNumCours.Location = new System.Drawing.Point(129, 33);
-            this.textNumCours.Name = "textNumCours";
-            this.textNumCours.Size = new System.Drawing.Size(127, 22);
-            this.textNumCours.TabIndex = 7;
-            this.textNumCours.TextChanged += new System.EventHandler(this.textNumCours_TextChanged);
-            // 
-            // textCodeCours
-            // 
-            this.textCodeCours.Location = new System.Drawing.Point(129, 65);
-            this.textCodeCours.Name = "textCodeCours";
-            this.textCodeCours.Size = new System.Drawing.Size(127, 22);
-            this.textCodeCours.TabIndex = 9;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 68);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(100, 17);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Code du cours";
-            // 
             // textNoteCoursEtudaint
             // 
             this.textNoteCoursEtudaint.Location = new System.Drawing.Point(678, 54);
@@ -163,32 +123,6 @@ namespace Exam3_AQL
             this.label6.Size = new System.Drawing.Size(38, 17);
             this.label6.TabIndex = 12;
             this.label6.Text = "Note";
-            // 
-            // textTitreCours
-            // 
-            this.textTitreCours.Location = new System.Drawing.Point(129, 96);
-            this.textTitreCours.Name = "textTitreCours";
-            this.textTitreCours.Size = new System.Drawing.Size(127, 22);
-            this.textTitreCours.TabIndex = 11;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 96);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(96, 17);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "Titre de cours";
-            // 
-            // buttonAjoutCours
-            // 
-            this.buttonAjoutCours.Location = new System.Drawing.Point(337, 84);
-            this.buttonAjoutCours.Name = "buttonAjoutCours";
-            this.buttonAjoutCours.Size = new System.Drawing.Size(129, 29);
-            this.buttonAjoutCours.TabIndex = 14;
-            this.buttonAjoutCours.Text = "Ajouter un cours";
-            this.buttonAjoutCours.UseVisualStyleBackColor = true;
-            this.buttonAjoutCours.Click += new System.EventHandler(this.button1_Click);
             // 
             // buttonEnregistrerNoteCours
             // 
@@ -245,54 +179,19 @@ namespace Exam3_AQL
             this.buttonAfficherReleve.Text = "Afficher relevé";
             this.buttonAfficherReleve.UseVisualStyleBackColor = true;
             // 
-            // dataGridView
+            // dataGridViewEtudiant
             // 
-            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3});
-            this.dataGridView.Location = new System.Drawing.Point(13, 128);
-            this.dataGridView.Name = "dataGridView";
-            this.dataGridView.RowHeadersWidth = 51;
-            this.dataGridView.RowTemplate.Height = 24;
-            this.dataGridView.Size = new System.Drawing.Size(453, 170);
-            this.dataGridView.TabIndex = 22;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Numéro cours";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 125;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Code cours";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 125;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Titre cours";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 125;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewEtudiant.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewEtudiant.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
-            this.dataGridView1.Location = new System.Drawing.Point(9, 128);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(488, 170);
-            this.dataGridView1.TabIndex = 23;
+            this.dataGridViewEtudiant.Location = new System.Drawing.Point(9, 128);
+            this.dataGridViewEtudiant.Name = "dataGridViewEtudiant";
+            this.dataGridViewEtudiant.RowHeadersWidth = 51;
+            this.dataGridViewEtudiant.RowTemplate.Height = 24;
+            this.dataGridViewEtudiant.Size = new System.Drawing.Size(488, 170);
+            this.dataGridViewEtudiant.TabIndex = 23;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -318,7 +217,7 @@ namespace Exam3_AQL
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(10, 70);
+            this.label12.Location = new System.Drawing.Point(10, 67);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(37, 17);
             this.label12.TabIndex = 2;
@@ -326,7 +225,7 @@ namespace Exam3_AQL
             // 
             // textNomEtudiant
             // 
-            this.textNomEtudiant.Location = new System.Drawing.Point(148, 69);
+            this.textNomEtudiant.Location = new System.Drawing.Point(148, 66);
             this.textNomEtudiant.Name = "textNomEtudiant";
             this.textNomEtudiant.Size = new System.Drawing.Size(139, 22);
             this.textNomEtudiant.TabIndex = 3;
@@ -341,29 +240,11 @@ namespace Exam3_AQL
             this.buttonAjoutEtudiant.UseVisualStyleBackColor = true;
             this.buttonAjoutEtudiant.Click += new System.EventHandler(this.buttonAjoutEtudiant_Click);
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.textNumCours);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.dataGridView);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.textCodeCours);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.textTitreCours);
-            this.groupBox1.Controls.Add(this.buttonAjoutCours);
-            this.groupBox1.Location = new System.Drawing.Point(540, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(492, 312);
-            this.groupBox1.TabIndex = 26;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Ajout Nouveau Cours";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.textNomEtudiant);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Controls.Add(this.dataGridViewEtudiant);
             this.groupBox2.Controls.Add(this.buttonAjoutEtudiant);
             this.groupBox2.Controls.Add(this.textNumEtudiant);
             this.groupBox2.Controls.Add(this.label12);
@@ -374,7 +255,17 @@ namespace Exam3_AQL
             this.groupBox2.Size = new System.Drawing.Size(518, 312);
             this.groupBox2.TabIndex = 27;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Ajout Nouveau Etudiant";
+            this.groupBox2.Text = "Ajout Nouvel Etudiant";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // textNumEtudiant
+            // 
+            this.textNumEtudiant.Location = new System.Drawing.Point(148, 35);
+            this.textNumEtudiant.Name = "textNumEtudiant";
+            this.textNumEtudiant.ReadOnly = true;
+            this.textNumEtudiant.Size = new System.Drawing.Size(139, 22);
+            this.textNumEtudiant.TabIndex = 1;
+            this.textNumEtudiant.TextChanged += new System.EventHandler(this.textNumEtudiant_TextChanged);
             // 
             // groupBox3
             // 
@@ -503,6 +394,118 @@ namespace Exam3_AQL
             this.buttonExpotTxt.Text = "Exporter tout les Etudiants en txt";
             this.buttonExpotTxt.UseVisualStyleBackColor = true;
             // 
+            // buttonAjoutCours
+            // 
+            this.buttonAjoutCours.Location = new System.Drawing.Point(337, 84);
+            this.buttonAjoutCours.Name = "buttonAjoutCours";
+            this.buttonAjoutCours.Size = new System.Drawing.Size(129, 29);
+            this.buttonAjoutCours.TabIndex = 14;
+            this.buttonAjoutCours.Text = "Ajouter un cours";
+            this.buttonAjoutCours.UseVisualStyleBackColor = true;
+            this.buttonAjoutCours.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // textTitreCours
+            // 
+            this.textTitreCours.Location = new System.Drawing.Point(129, 96);
+            this.textTitreCours.Name = "textTitreCours";
+            this.textTitreCours.Size = new System.Drawing.Size(127, 22);
+            this.textTitreCours.TabIndex = 11;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 96);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(96, 17);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "Titre de cours";
+            // 
+            // textCodeCours
+            // 
+            this.textCodeCours.Location = new System.Drawing.Point(129, 65);
+            this.textCodeCours.Name = "textCodeCours";
+            this.textCodeCours.Size = new System.Drawing.Size(127, 22);
+            this.textCodeCours.TabIndex = 9;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 68);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(100, 17);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Code du cours";
+            // 
+            // dataGridView
+            // 
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3});
+            this.dataGridView.Location = new System.Drawing.Point(13, 128);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.RowHeadersWidth = 51;
+            this.dataGridView.RowTemplate.Height = 24;
+            this.dataGridView.Size = new System.Drawing.Size(453, 170);
+            this.dataGridView.TabIndex = 22;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Numéro cours";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 125;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Code cours";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 125;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Titre cours";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 125;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 36);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(117, 17);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Numero de cours";
+            // 
+            // textNumCours
+            // 
+            this.textNumCours.Location = new System.Drawing.Point(129, 33);
+            this.textNumCours.Name = "textNumCours";
+            this.textNumCours.Size = new System.Drawing.Size(127, 22);
+            this.textNumCours.TabIndex = 7;
+            this.textNumCours.TextChanged += new System.EventHandler(this.textNumCours_TextChanged);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.textNumCours);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.dataGridView);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.textCodeCours);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.textTitreCours);
+            this.groupBox1.Controls.Add(this.buttonAjoutCours);
+            this.groupBox1.Location = new System.Drawing.Point(540, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(492, 312);
+            this.groupBox1.TabIndex = 26;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Ajout Nouveau Cours";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -515,10 +518,7 @@ namespace Exam3_AQL
             this.Name = "Form1";
             this.Text = "Details Etudiants Et Notes des Cours";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEtudiant)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -526,6 +526,9 @@ namespace Exam3_AQL
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -533,30 +536,20 @@ namespace Exam3_AQL
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textNumEtudiant;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textPrenomEtudiant;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textNumCours;
-        private System.Windows.Forms.TextBox textCodeCours;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textNoteCoursEtudaint;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textTitreCours;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button buttonAjoutCours;
         private System.Windows.Forms.Button buttonEnregistrerNoteCours;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox comboCodeEtudiant;
         private System.Windows.Forms.Button buttonAfficherReleve;
-        private System.Windows.Forms.DataGridView dataGridView;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewEtudiant;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox textNomEtudiant;
         private System.Windows.Forms.Button buttonAjoutEtudiant;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label11;
@@ -565,9 +558,6 @@ namespace Exam3_AQL
         private System.Windows.Forms.ComboBox comboNumCours;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button buttonExpotTxt;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -577,6 +567,19 @@ namespace Exam3_AQL
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.Button buttonAjoutCours;
+        private System.Windows.Forms.TextBox textTitreCours;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textCodeCours;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textNumCours;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox textNumEtudiant;
     }
 }
 

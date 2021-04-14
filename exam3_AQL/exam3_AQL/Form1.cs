@@ -12,9 +12,14 @@ namespace Exam3_AQL
 {
     public partial class Form1 : Form
     {
+        
+
+        public List<Etudiant> ListeEtudiants = new List<Etudiant>();
+
         public Form1()
         {
             InitializeComponent();
+            textNumEtudiant.Text = 1 +"";
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -25,24 +30,7 @@ namespace Exam3_AQL
         //Bouton Ajouter cours
         private void button1_Click(object sender, EventArgs e)
         {
-            try
-            {
-               Note note = new Note(int.Parse(textNumEtudiant.Text), textCodeCours.Text, double.Parse(textNoteCoursEtudaint.Text));
-                Cours cours = new Cours(int.Parse(textNumCours.Text), textCodeCours.Text, textTitreCours.Text, note);
-                Cours.ListeDeCours.Add(cours);
            
-                dataGridView.Rows.Add(cours.NumeroCours , cours.CodeCours , cours.TitreCours , cours.LaNote.NoteCours);
-
-                textNumCours.Text = "";
-                textCodeCours.Text = "";
-                textTitreCours.Text = "";
-                textNoteCoursEtudaint.Text = "";
-            }
-            catch (FormatException )
-            {
-                string message = "Des nombres sont requis au nivreau des champs : 'Numéro d'étudiant' , 'Numéro de cours' et 'Note'";
-                MessageBox.Show(message);
-            }
         }
 
         private void textNumCours_TextChanged(object sender, EventArgs e)
@@ -57,10 +45,49 @@ namespace Exam3_AQL
 
         private void buttonAjoutEtudiant_Click(object sender, EventArgs e)
         {
+            int increment;
+            Etudiant etudiant = new Etudiant (textNomEtudiant.Text, textPrenomEtudiant.Text);
+
+
+            if (textNomEtudiant.Text == "") { 
+                MessageBox.Show("Entrer le nom SVP !");
+                increment--;
+            }
+            else if (textPrenomEtudiant.Text == "") MessageBox.Show("Entrer le prénom SVP!");
+            else
+            {
+
+                textNumEtudiant.Text = etudiant.NumeroEtudiant + "";
+
+                dataGridViewEtudiant.Rows.Add(textNumEtudiant.Text, textNomEtudiant.Text, textPrenomEtudiant.Text);
+
+                ListeEtudiants.Add(etudiant);
+
+                increment = int.Parse(textNumEtudiant.Text);
+                increment++;
+
+                textNomEtudiant.Clear();
+                textPrenomEtudiant.Clear();
+                textNumEtudiant.Text = increment + "";
+            }
+        } 
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
 
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textNumEtudiant_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textNumEtudiant_Click(object sender, EventArgs e)
         {
 
         }
