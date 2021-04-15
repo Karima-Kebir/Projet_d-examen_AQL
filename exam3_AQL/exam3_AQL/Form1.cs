@@ -12,59 +12,47 @@ namespace Exam3_AQL
 {
     public partial class Form1 : Form
     {
-
         private int incrementCours = 1;
         public List<Cours> CoursList = new List<Cours>();
         public List<Etudiant> ListeEtudiants = new List<Etudiant>();
         public List<Donnees> ListeDonnees = new List<Donnees>();
 
-
         public Form1()
         {
             InitializeComponent();
-            
+            textNumEtudiant.Text = 1 + "";
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             textNumCours.Text = incrementCours.ToString();
-			textNumEtudiant.Text = 1 +"";
 
         }
 
         //Bouton Ajouter cours
         private void buttonAjoutCours_Click(object sender, EventArgs e)
         {
-           try
+            if (textCodeCours.Text != "" && textTitreCours.Text != "")
             {
-                if (textCodeCours.Text != "" && textTitreCours.Text != "")
-                {
-                    Cours cours = new Cours(int.Parse(textNumCours.Text), textCodeCours.Text, textTitreCours.Text);
+                Cours cours = new Cours(int.Parse(textNumCours.Text), textCodeCours.Text, textTitreCours.Text);
 
-                    dataGridView.Rows.Add(cours.NumeroCours, cours.CodeCours, cours.TitreCours);
-                    CoursList.Add(cours);
-                    incrementCours++;
+                dataGridView.Rows.Add(cours.NumeroCours, cours.CodeCours, cours.TitreCours);
+                CoursList.Add(cours);
+                incrementCours++;
 
-                    textNumCours.Text = incrementCours.ToString();
-                    textCodeCours.Clear();
-                    textTitreCours.Clear();
+                textNumCours.Text = incrementCours.ToString();
+                textCodeCours.Clear();
+                textTitreCours.Clear();
 
-                    if (CoursList.Count() != 0)
-                        remplirComboCours(CoursList);
-                }
-                else
-                {
-                    MessageBox.Show("Vous devez saisir tous les champs");
-                }
+                if (CoursList.Count() != 0)
+                    remplirComboCours(CoursList);
             }
-            catch (FormatException)
+            else
             {
-                MessageBox.Show("Vous devez saisir un nombre dans le champs : Numéro de cours");
+                MessageBox.Show("Vous devez saisir tous les champs !");
             }
-
         }
 
-  
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -72,9 +60,7 @@ namespace Exam3_AQL
 
         private void buttonAjoutEtudiant_Click(object sender, EventArgs e)
         {
-            try
-            {
-             if(textNomEtudiant.Text !="" && textPrenomEtudiant.Text != "")
+                if (textNomEtudiant.Text != "" && textPrenomEtudiant.Text != "")
                 {
                     Etudiant etudiant = new Etudiant(textNomEtudiant.Text, textPrenomEtudiant.Text);
 
@@ -95,41 +81,27 @@ namespace Exam3_AQL
                     {
                         remplirComboEtudiant(ListeEtudiants);
                     }
-                        
                 }
                 else
                 {
                     MessageBox.Show("Vous devez saisir tous les champs");
                 }
-            }
-            
-            catch (FormatException)
-            {
-                MessageBox.Show("Vous devez saisir les types convenables");
-            }
+          
         }
+
+
         //remplir le comboBox avec les numeros des etudiants deja saisies
         private void remplirComboEtudiant(List<Etudiant> listetudiant)
         {
             comboNumEtudiant.Items.Clear();
-            for (int i=0; i < listetudiant.Count(); i++)
+            for (int i = 0; i < listetudiant.Count(); i++)
             {
                 comboNumEtudiant.Items.Add(listetudiant[i].NumeroEtudiant);
             }
             comboNumEtudiant.Text = listetudiant[0].NumeroEtudiant.ToString();
 
         }
-        //remplir le comboBox avec les numeros des etudiants deja saisies
-        private void remplirComboCodeEtudiant(List<Etudiant> listetudiant)
-        {
-            comboCodeEtudiant.Items.Clear();
-            for (int i = 0; i < listetudiant.Count(); i++)
-            {
-                comboCodeEtudiant.Items.Add(listetudiant[i].NumeroEtudiant);
-            }
-            comboCodeEtudiant.Text = listetudiant[0].NumeroEtudiant.ToString();
-
-        }
+  
         //remplir le comboBox avec les numeros des cours deja saisies
         private void remplirComboCours(List<Cours> listcours)
         {
@@ -174,9 +146,9 @@ namespace Exam3_AQL
                     Donnees donneesEtudiant = new Donnees(etudiant, cours, note);
 
                     dataGridView2.Rows.Add(etudiant.NumeroEtudiant, etudiant.Nom, etudiant.Prenom, cours.TitreCours, note.NoteCours);
-                    
+
                     ListeDonnees.Add(donneesEtudiant);
-                   
+
                     textNoteCoursEtudaint.Clear();
                     comboCodeEtudiant.Items.Add(etudiant.NumeroEtudiant);
                     comboCodeEtudiant.Text = comboCodeEtudiant.Items[0].ToString();
@@ -192,5 +164,60 @@ namespace Exam3_AQL
             }
         }
 
+
+        private void buttonExpotTxt_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboNumCours_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        /*******************************************************************************************/
+        public static List<Donnees> donnees;
+        private void buttonAfficherReleve_Click(object sender, EventArgs e)
+        {
+            Form2 form = new Form2();
+            form.Show();
+            donnees = recupererDonnees(int.Parse(comboCodeEtudiant.Text),ListeEtudiants, ListeDonnees );
+        }
+
+        public List<Donnees> recupererDonnees(int numeroEtudiant, List<Etudiant> listeEtudiants, List<Donnees> listeDeDonnees){
+            List<Donnees> listeDonneesEtudiant = new List<Donnees>();
+            
+            Etudiant etudiant = findEtudiant( numeroEtudiant, listeEtudiants);
+            List<Cours> listeCoursPrisParEtudiant = trouverLesCoursParUnEtudiant(numeroEtudiant, listeDeDonnees) ;
+
+            foreach (Cours cours in listeCoursPrisParEtudiant) {
+                Note note = trouverNoteParCoursParEtudiant(etudiant,cours);
+                Donnees donnee = new Donnees (etudiant,cours, note);
+                listeDonneesEtudiant.Add(donnee);             
+            }
+            return listeDonneesEtudiant;
+        }
+
+
+        private List<Cours> trouverLesCoursParUnEtudiant(int numeroEtudiant , List<Donnees> listeDeDonnees) {
+            List<Cours> listeCours = new List<Cours>();
+            foreach(Donnees donnee in listeDeDonnees)
+            {
+                if (donnee.UnEtudiant.NumeroEtudiant == numeroEtudiant) listeCours.Add(donnee.UnCours);
+            }
+            return listeCours;
+        }
+
+        private Note trouverNoteParCoursParEtudiant(Etudiant etudiant , Cours cours)
+        { 
+            foreach (Donnees donnee in ListeDonnees)
+            {
+                if (donnee.UnEtudiant == etudiant && donnee.UnCours == cours) return donnee.UneNote;
+            }
+            return null;
+        }
+
+        private void comboCodeEtudiant_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
     }
 }
