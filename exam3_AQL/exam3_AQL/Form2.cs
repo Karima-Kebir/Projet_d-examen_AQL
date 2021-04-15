@@ -34,7 +34,7 @@ namespace Exam3_AQL
                     NoteEtudiant.Add(d.UneNote);
                     dataGridView1.Rows.Add(d.UnCours.NumeroCours,d.UnCours.CodeCours,d.UnCours.TitreCours,d.noteduCours());
                 }
-                double moyenneEtudiant = calculerMoyemme(NoteEtudiant);
+                double moyenneEtudiant = calculerMoyenne(NoteEtudiant);
                 AfficherMoyenne.Text = moyenneEtudiant.ToString();
             }
          
@@ -56,10 +56,13 @@ namespace Exam3_AQL
                 str += "\n==============================================================================\n";
                 foreach (Donnees d in DonneesEtudiant)
                 {
-                    str += "Numero Cours : " + d.UnCours.NumeroCours +" | " + "Code Cours : "+ d.UnCours.CodeCours+ " | "+
+                    str += "Numero Cours : " + d.UnCours.NumeroCours + " | " + "Code Cours : " + d.UnCours.CodeCours + " | " +
                            "Titre Cours : " + d.UnCours.TitreCours + " | " + "Note : " + d.noteduCours() +
                         "\n_____________________________________________________________________________\n";
+                       
                 }
+                str += "\n==============================================================================" +
+                    "\nMoyenne = " + calculerMoyenne(NoteEtudiant).ToString();
 
             }
             SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -75,7 +78,7 @@ namespace Exam3_AQL
                 }
             }
 
-        private double calculerMoyemme(List<Note> listeNotes )
+        private double calculerMoyenne(List<Note> listeNotes )
         {
             double resultat = 0;
             if (listeNotes.Count() != 0)
