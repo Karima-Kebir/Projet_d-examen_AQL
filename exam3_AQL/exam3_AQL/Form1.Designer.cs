@@ -310,7 +310,7 @@ namespace Exam3_AQL
             this.buttonExpotTxt.Name = "buttonExpotTxt";
             this.buttonExpotTxt.Size = new System.Drawing.Size(281, 28);
             this.buttonExpotTxt.TabIndex = 22;
-            this.buttonExpotTxt.Text = "Exporter tous les Etudiants en txt";
+            this.buttonExpotTxt.Text = "Exporter tous les étudiants en txt";
             this.buttonExpotTxt.UseVisualStyleBackColor = true;
             this.buttonExpotTxt.Click += new System.EventHandler(this.buttonExpotTxt_Click);
             // 

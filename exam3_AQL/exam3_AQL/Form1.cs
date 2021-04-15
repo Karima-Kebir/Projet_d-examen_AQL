@@ -96,7 +96,7 @@ namespace Exam3_AQL
 
         }
 
-        //remplir le comboBox avec les numeros des cours deja saisies
+        //remplir le comboBox avec les numeros des cours deja saisis
         private void remplirComboCours(List<Cours> listCours)
         {
             comboNumCours.Items.Clear();
@@ -127,7 +127,7 @@ namespace Exam3_AQL
             return null;
         }
 
-        //chercher les donnees d'un etudiant dans un registre : tout les lignes cours + note 
+        //chercher les donnees d'un etudiant dans un registre : toutes les lignes cours + note 
         public List<Donnees> trouverDonneesEtudiant(List<Donnees> listDonnees, int NumEtudiant)
         {
             List<Donnees> donneesTrouve = new List<Donnees>();
