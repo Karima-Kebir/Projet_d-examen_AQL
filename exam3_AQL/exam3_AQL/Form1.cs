@@ -27,10 +27,8 @@ namespace Exam3_AQL
         private void Form1_Load(object sender, EventArgs e)
         {
             textNumCours.Text = incrementCours.ToString();
-
         }
 
-        //Bouton Ajouter cours
         private void buttonAjoutCours_Click(object sender, EventArgs e)
         {
             if (textCodeCours.Text != "" && textTitreCours.Text != "")
@@ -54,85 +52,83 @@ namespace Exam3_AQL
             }
         }
 
-
         private void buttonAjoutEtudiant_Click(object sender, EventArgs e)
         {
-                if (textNomEtudiant.Text != "" && textPrenomEtudiant.Text != "")
+            if (textNomEtudiant.Text != "" && textPrenomEtudiant.Text != "")
+            {
+                Etudiant etudiant = new Etudiant(textNomEtudiant.Text, textPrenomEtudiant.Text);
+
+                textNumEtudiant.Text = etudiant.NumeroEtudiant + "";
+
+                dataGridViewEtudiant.Rows.Add(textNumEtudiant.Text, textNomEtudiant.Text, textPrenomEtudiant.Text);
+
+                ListeEtudiants.Add(etudiant);
+
+                int increment = int.Parse(textNumEtudiant.Text);
+                increment++;
+
+                textNomEtudiant.Clear();
+                textPrenomEtudiant.Clear();
+                textNumEtudiant.Text = increment + "";
+
+                if (ListeEtudiants.Count() != 0)
                 {
-                    Etudiant etudiant = new Etudiant(textNomEtudiant.Text, textPrenomEtudiant.Text);
-
-                    textNumEtudiant.Text = etudiant.NumeroEtudiant + "";
-
-                    dataGridViewEtudiant.Rows.Add(textNumEtudiant.Text, textNomEtudiant.Text, textPrenomEtudiant.Text);
-
-                    ListeEtudiants.Add(etudiant);
-
-                    int increment = int.Parse(textNumEtudiant.Text);
-                    increment++;
-
-                    textNomEtudiant.Clear();
-                    textPrenomEtudiant.Clear();
-                    textNumEtudiant.Text = increment + "";
-
-                    if (ListeEtudiants.Count() != 0)
-                    {
-                        remplirComboEtudiant(ListeEtudiants);
-                    }
+                    remplirComboEtudiant(ListeEtudiants);
                 }
-                else
-                {
-                    MessageBox.Show("Vous devez saisir tous les champs");
-                }
-          
+            }
+            else
+            {
+                MessageBox.Show("Vous devez saisir tous les champs !");
+            }
+
         }
 
 
-        //remplir le comboBox avec les numeros des etudiants deja saisies
-        private void remplirComboEtudiant(List<Etudiant> listetudiant)
+        // Remplir le comboBox avec les numéros des étudiants deja saisis
+        private void remplirComboEtudiant(List<Etudiant> listEtudiant)
         {
             comboNumEtudiant.Items.Clear();
-            for (int i = 0; i < listetudiant.Count(); i++)
+            for (int i = 0; i < listEtudiant.Count(); i++)
             {
-                comboNumEtudiant.Items.Add(listetudiant[i].NumeroEtudiant);
+                comboNumEtudiant.Items.Add(listEtudiant[i].NumeroEtudiant);
             }
-            comboNumEtudiant.Text = listetudiant[0].NumeroEtudiant.ToString();
+            comboNumEtudiant.Text = listEtudiant[0].NumeroEtudiant.ToString();
 
         }
-  
-        //remplir le comboBox avec les numeros des cours deja saisies
-        private void remplirComboCours(List<Cours> listcours)
+
+        //remplir le comboBox avec les numeros des cours deja saisis
+        private void remplirComboCours(List<Cours> listCours)
         {
             comboNumCours.Items.Clear();
-            for (int i = 0; i < listcours.Count(); i++)
+            for (int i = 0; i < listCours.Count(); i++)
             {
-                comboNumCours.Items.Add(listcours[i].NumeroCours);
+                comboNumCours.Items.Add(listCours[i].NumeroCours);
             }
-            comboNumCours.Text = listcours[0].NumeroCours.ToString();
+            comboNumCours.Text = listCours[0].NumeroCours.ToString();
 
         }
         //Recherche d'un etudiant dans une liste par son numero
-        private Etudiant findEtudiant(int num, List<Etudiant> listetudiant)
+        private Etudiant trouverEtudiant(int numeroDetudiant, List<Etudiant> listEtudiant)
         {
-            foreach (Etudiant et in listetudiant)
+            foreach (Etudiant etudiant in listEtudiant)
             {
-                if (et.NumeroEtudiant == num) return et;
-
+                if (etudiant.NumeroEtudiant == numeroDetudiant) return etudiant;
             }
             return null;
         }
 
         //Recherche d'un cours dans une liste par son numero
-        private Cours findCours(int num, List<Cours> listecours)
+        private Cours trouverCours(int numeroDeCours, List<Cours> listeCours)
         {
-            foreach (Cours c in listecours)
+            foreach (Cours cours in listeCours)
             {
-                if (c.NumeroCours == num) return c;
+                if (cours.NumeroCours == numeroDeCours) return cours;
             }
             return null;
         }
 
-        //chercher les donnees d'un etudiant dans un registre : tout les lignes cours + note 
-        public List<Donnees> RechercherDonneesEtudiant(List<Donnees> listDonnees, int NumEtudiant)
+        //chercher les donnees d'un etudiant dans un registre : toutes les lignes cours + note 
+        public List<Donnees> trouverDonneesEtudiant(List<Donnees> listDonnees, int NumEtudiant)
         {
             List<Donnees> donneesTrouve = new List<Donnees>();
             foreach (Donnees d in listDonnees)
@@ -141,37 +137,35 @@ namespace Exam3_AQL
                 {
                     donneesTrouve.Add(d);
                 }
-
             }
             return donneesTrouve;
         }
 
-
-
         //Verifie si la liste contient la meme ligne pour le meme etudiant et le meme cours
-        private bool verifieDoublant(List<Donnees> listedonnee, Etudiant etudiant, Cours cours)
+        private bool verifierDoublon(List<Donnees> listedonnee, Etudiant etudiant, Cours cours)
         {
-            bool test = false;
+            bool doublon = false;
             foreach (Donnees d in listedonnee)
             {
                 if (d.UnEtudiant.Equals(etudiant) && d.UnCours.Equals(cours))
-                    test= true; 
+                    doublon = true;
             }
-            return test;
+            return doublon;
         }
+
         private void buttonEnregistrerNoteCours_Click(object sender, EventArgs e)
         {
             try
             {
-                if (comboNumEtudiant.Text != "" && comboNumCours.Text != "" && textNoteCoursEtudaint.Text != "")
+                if (comboNumEtudiant.Text != "" && comboNumCours.Text != "" && textNoteCoursEtudaint.Text != "" )
                 {
-                    Etudiant etudiant = findEtudiant(int.Parse(comboNumEtudiant.Text), ListeEtudiants);
-                    Cours cours = findCours(int.Parse(comboNumCours.Text), CoursList);
+                    Etudiant etudiant = trouverEtudiant(int.Parse(comboNumEtudiant.Text), ListeEtudiants);
+                    Cours cours = trouverCours(int.Parse(comboNumCours.Text), CoursList);
                     Note note = new Note(int.Parse(comboNumEtudiant.Text), cours.CodeCours, int.Parse(textNoteCoursEtudaint.Text));
                     Donnees donneesEtudiant = new Donnees(etudiant, cours, note);
-                    if (verifieDoublant(ListeDonnees,etudiant,cours)==false)
+                    if (verifierDoublon(ListeDonnees, etudiant, cours) == false)
                     {
-                        if(int.Parse(textNoteCoursEtudaint.Text) >=0 && int.Parse(textNoteCoursEtudaint.Text) <= 100)
+                        if (int.Parse(textNoteCoursEtudaint.Text) >= 0 && int.Parse(textNoteCoursEtudaint.Text) <= 100 )
                         {
                             ListeDonnees.Add(donneesEtudiant);
                             dataGridView2.Rows.Add(etudiant.NumeroEtudiant, etudiant.Nom, etudiant.Prenom, cours.TitreCours, note.NoteCours);
@@ -179,25 +173,25 @@ namespace Exam3_AQL
                         }
                         else
                         {
-                            MessageBox.Show("Saisissez une note ente 0 et 100");
+                            MessageBox.Show("Vous devez saisir une note ente 0 et 100.");
                         }
 
                     }
                     else
                     {
-                        MessageBox.Show("Cet etudiant a deja une note pour ce cours");
+                        MessageBox.Show("Cet étudiant a déjà une note pour ce cours.");
                     }
-                    
 
-                    if (!comboCodeEtudiant.Items.Contains(etudiant.NumeroEtudiant)) //tester si le combo contient deja ce code ou non
+                    //tester si le combo contient deja ce code ou non
+                    if (!comboCodeEtudiant.Items.Contains(etudiant.NumeroEtudiant) ) 
                     {
                         comboCodeEtudiant.Items.Add(etudiant.NumeroEtudiant);
                         comboCodeEtudiant.Text = comboCodeEtudiant.Items[0].ToString();
-                    }           
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Vous devez saisir tous les champs");
+                    MessageBox.Show("Vous devez saisir tous les champs !");
                 }
             }
             catch (FormatException)
@@ -205,69 +199,66 @@ namespace Exam3_AQL
                 MessageBox.Show("Vous devez saisir un nombre dans le champs : Note");
             }
         }
-
-
-        /*******************************************************************************************/
+        
+        //Création d'une liste statique qui sera appelée dans Form2
         public static List<Donnees> donnees;
         private void buttonAfficherReleve_Click(object sender, EventArgs e)
         {
             try
             {
-                if(this.comboCodeEtudiant.Text != "")
+                if (this.comboCodeEtudiant.Text != "")
                 {
                     int NumEtudiant = int.Parse(this.comboCodeEtudiant.Text);
-                    if (RechercherDonneesEtudiant(this.ListeDonnees, NumEtudiant).Count()!=0)
+                    if (trouverDonneesEtudiant(this.ListeDonnees, NumEtudiant).Count() != 0)
                     {
                         Form2 form = new Form2();
-                        form.DonneesEtudiant = RechercherDonneesEtudiant(this.ListeDonnees, NumEtudiant);
+                        form.DonneesEtudiant = trouverDonneesEtudiant(this.ListeDonnees, NumEtudiant);
                         form.Show();
                     }
-                    else MessageBox.Show("Cet etudiant n'existe pas ou n'a pas encore des notes");
+                    else MessageBox.Show("Cet etudiant n'existe pas ou n'a pas encore des notes.");
                 }
-                else MessageBox.Show("Le champ Numero Etudiant est vide");
+                else MessageBox.Show("Le champ Numero Etudiant est vide.");
 
             }
             catch (FormatException)
             {
-                MessageBox.Show("Vous devez saisir un nombre ");
+                MessageBox.Show("Vous devez saisir un nombre.");
             }
-
-
         }
 
         private void buttonExpotTxt_Click(object sender, EventArgs e)
         {
-            
-            string str = "";
-           
-                if (ListeDonnees.Count()!=0)
+            string donnee = "";
+
+            if (ListeDonnees.Count() != 0)
+            {
+                foreach (Etudiant etud in ListeEtudiants)
                 {
-                foreach(Etudiant etud in ListeEtudiants)
-                {
-                    List<Donnees> donnesEtudiant = RechercherDonneesEtudiant(this.ListeDonnees, etud.NumeroEtudiant);
+                    List<Donnees> donnesEtudiant = trouverDonneesEtudiant(this.ListeDonnees, etud.NumeroEtudiant);
                     if (donnesEtudiant.Count() != 0)
                     {
                         foreach (Donnees d in donnesEtudiant)
                         {
-                            str += d.ToString();
+                            donnee += d.ToString();
                         }
                     }
                 }
-                    SaveFileDialog sfd = new SaveFileDialog();
-                    sfd.Filter = "WAP Files (*.txt)|*.txt";
-                    sfd.OverwritePrompt = true;
-                    if (sfd.ShowDialog() == DialogResult.OK)
-                    {
-                        StreamWriter write = new StreamWriter(File.Create(sfd.FileName));
-                        write.WriteLine(str);
 
-                        write.Close();
-                        write.Dispose();
-                    }
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "WAP Files (*.txt)|*.txt";
+                saveFileDialog.OverwritePrompt = true;
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    StreamWriter write = new StreamWriter(File.Create(saveFileDialog.FileName));
+                    write.WriteLine(donnee);
+                    write.Close();
+                    write.Dispose();
                 }
-                else MessageBox.Show("Pas de donnees a Exporter !");
-            
-            
+            }
+            else MessageBox.Show("Pas de données à exporter !");
+
+
         }
     }
 }

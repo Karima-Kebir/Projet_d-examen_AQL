@@ -112,7 +112,7 @@ namespace Exam3_AQL
             // 
             // textNoteCoursEtudaint
             // 
-            this.textNoteCoursEtudaint.Location = new System.Drawing.Point(677, 54);
+            this.textNoteCoursEtudaint.Location = new System.Drawing.Point(677, 50);
             this.textNoteCoursEtudaint.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textNoteCoursEtudaint.Name = "textNoteCoursEtudaint";
             this.textNoteCoursEtudaint.Size = new System.Drawing.Size(95, 22);
@@ -121,7 +121,7 @@ namespace Exam3_AQL
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(635, 58);
+            this.label6.Location = new System.Drawing.Point(635, 54);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(38, 17);
             this.label6.TabIndex = 12;
@@ -129,7 +129,7 @@ namespace Exam3_AQL
             // 
             // buttonEnregistrerNoteCours
             // 
-            this.buttonEnregistrerNoteCours.Location = new System.Drawing.Point(832, 54);
+            this.buttonEnregistrerNoteCours.Location = new System.Drawing.Point(832, 48);
             this.buttonEnregistrerNoteCours.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonEnregistrerNoteCours.Name = "buttonEnregistrerNoteCours";
             this.buttonEnregistrerNoteCours.Size = new System.Drawing.Size(149, 25);
@@ -161,7 +161,7 @@ namespace Exam3_AQL
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(11, 82);
+            this.label10.Location = new System.Drawing.Point(128, 82);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(156, 17);
             this.label10.TabIndex = 19;
@@ -170,7 +170,7 @@ namespace Exam3_AQL
             // comboCodeEtudiant
             // 
             this.comboCodeEtudiant.FormattingEnabled = true;
-            this.comboCodeEtudiant.Location = new System.Drawing.Point(214, 76);
+            this.comboCodeEtudiant.Location = new System.Drawing.Point(331, 76);
             this.comboCodeEtudiant.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboCodeEtudiant.Name = "comboCodeEtudiant";
             this.comboCodeEtudiant.Size = new System.Drawing.Size(177, 24);
@@ -178,7 +178,7 @@ namespace Exam3_AQL
             // 
             // buttonAfficherReleve
             // 
-            this.buttonAfficherReleve.Location = new System.Drawing.Point(489, 76);
+            this.buttonAfficherReleve.Location = new System.Drawing.Point(606, 76);
             this.buttonAfficherReleve.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonAfficherReleve.Name = "buttonAfficherReleve";
             this.buttonAfficherReleve.Size = new System.Drawing.Size(184, 31);
@@ -208,6 +208,7 @@ namespace Exam3_AQL
             this.dataGridViewTextBoxColumn1.HeaderText = "Numéro Etudiant";
             this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             this.dataGridViewTextBoxColumn1.Width = 150;
             // 
             // dataGridViewTextBoxColumn2
@@ -215,6 +216,7 @@ namespace Exam3_AQL
             this.dataGridViewTextBoxColumn2.HeaderText = "Nom";
             this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             this.dataGridViewTextBoxColumn2.Width = 125;
             // 
             // dataGridViewTextBoxColumn3
@@ -222,6 +224,7 @@ namespace Exam3_AQL
             this.dataGridViewTextBoxColumn3.HeaderText = "Prenom";
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             this.dataGridViewTextBoxColumn3.Width = 150;
             // 
             // label12
@@ -307,7 +310,7 @@ namespace Exam3_AQL
             this.buttonExpotTxt.Name = "buttonExpotTxt";
             this.buttonExpotTxt.Size = new System.Drawing.Size(281, 28);
             this.buttonExpotTxt.TabIndex = 22;
-            this.buttonExpotTxt.Text = "Exporter tous les Etudiants en txt";
+            this.buttonExpotTxt.Text = "Exporter tous les étudiants en txt";
             this.buttonExpotTxt.UseVisualStyleBackColor = true;
             this.buttonExpotTxt.Click += new System.EventHandler(this.buttonExpotTxt_Click);
             // 
@@ -320,7 +323,7 @@ namespace Exam3_AQL
             this.dataGridViewTextBoxColumn6,
             this.Column4,
             this.Column5});
-            this.dataGridView2.Location = new System.Drawing.Point(12, 96);
+            this.dataGridView2.Location = new System.Drawing.Point(12, 92);
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
@@ -334,6 +337,7 @@ namespace Exam3_AQL
             this.dataGridViewTextBoxColumn4.HeaderText = "Numéro Etudiant";
             this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             this.dataGridViewTextBoxColumn4.Width = 150;
             // 
             // dataGridViewTextBoxColumn5
@@ -341,6 +345,7 @@ namespace Exam3_AQL
             this.dataGridViewTextBoxColumn5.HeaderText = "Nom";
             this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             this.dataGridViewTextBoxColumn5.Width = 150;
             // 
             // dataGridViewTextBoxColumn6
@@ -348,6 +353,7 @@ namespace Exam3_AQL
             this.dataGridViewTextBoxColumn6.HeaderText = "Prenom";
             this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             this.dataGridViewTextBoxColumn6.Width = 150;
             // 
             // Column4
@@ -355,6 +361,7 @@ namespace Exam3_AQL
             this.Column4.HeaderText = "TitreCours";
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             this.Column4.Width = 125;
             // 
             // Column5
@@ -362,12 +369,13 @@ namespace Exam3_AQL
             this.Column5.HeaderText = "Note";
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             this.Column5.Width = 125;
             // 
             // comboNumCours
             // 
             this.comboNumCours.FormattingEnabled = true;
-            this.comboNumCours.Location = new System.Drawing.Point(421, 55);
+            this.comboNumCours.Location = new System.Drawing.Point(421, 51);
             this.comboNumCours.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboNumCours.Name = "comboNumCours";
             this.comboNumCours.Size = new System.Drawing.Size(152, 24);
@@ -376,7 +384,7 @@ namespace Exam3_AQL
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(316, 58);
+            this.label11.Location = new System.Drawing.Point(316, 54);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(99, 17);
             this.label11.TabIndex = 30;
@@ -385,7 +393,7 @@ namespace Exam3_AQL
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 58);
+            this.label2.Location = new System.Drawing.Point(11, 54);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(113, 17);
             this.label2.TabIndex = 29;
@@ -394,7 +402,7 @@ namespace Exam3_AQL
             // comboNumEtudiant
             // 
             this.comboNumEtudiant.FormattingEnabled = true;
-            this.comboNumEtudiant.Location = new System.Drawing.Point(135, 55);
+            this.comboNumEtudiant.Location = new System.Drawing.Point(135, 51);
             this.comboNumEtudiant.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboNumEtudiant.Name = "comboNumEtudiant";
             this.comboNumEtudiant.Size = new System.Drawing.Size(152, 24);
@@ -484,6 +492,7 @@ namespace Exam3_AQL
             this.Column1.HeaderText = "Numéro cours";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             this.Column1.Width = 125;
             // 
             // Column2
@@ -491,6 +500,7 @@ namespace Exam3_AQL
             this.Column2.HeaderText = "Code cours";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             this.Column2.Width = 125;
             // 
             // Column3
@@ -498,6 +508,7 @@ namespace Exam3_AQL
             this.Column3.HeaderText = "Titre cours";
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             this.Column3.Width = 125;
             // 
             // label4

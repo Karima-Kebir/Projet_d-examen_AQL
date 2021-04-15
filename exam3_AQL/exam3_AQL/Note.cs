@@ -12,7 +12,7 @@ namespace Exam3_AQL
         public string CodeCours { get; set; }
         public double NoteCours { get; set; }
 
-       
+  
         public Note(int numeroEtudiant, string codeCours, double noteCours)
         {
             this.NumeroEtudiant = numeroEtudiant;
@@ -21,7 +21,6 @@ namespace Exam3_AQL
         }
 
         // Méthode ToString permettant de convertir l'objet cours vers une chaîne de caractère
-
         public override string ToString()
         {
             return "Numéro Etudiant : " + this.NumeroEtudiant + "\n" +
@@ -29,8 +28,7 @@ namespace Exam3_AQL
                    "Note Cours : " + this.NoteCours;
         }
 
-
-        // Méthode ToString permettant de comparer deux Notes
+        // Méthode Equals permettant de comparer deux Notes
         public override bool Equals(object obj)
         {
             if (!(obj is Note)) return false;
@@ -39,13 +37,11 @@ namespace Exam3_AQL
             return note.NumeroEtudiant == this.NumeroEtudiant &&
                 note.CodeCours == this.CodeCours &&
                note.NoteCours == this.NoteCours;
-
         }
 
         public override int GetHashCode()
         {
             return base.GetHashCode();
         }
-
     }
 }
