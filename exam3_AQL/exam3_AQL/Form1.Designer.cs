@@ -129,10 +129,10 @@ namespace Exam3_AQL
             // 
             // buttonEnregistrerNoteCours
             // 
-            this.buttonEnregistrerNoteCours.Location = new System.Drawing.Point(832, 48);
+            this.buttonEnregistrerNoteCours.Location = new System.Drawing.Point(862, 45);
             this.buttonEnregistrerNoteCours.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonEnregistrerNoteCours.Name = "buttonEnregistrerNoteCours";
-            this.buttonEnregistrerNoteCours.Size = new System.Drawing.Size(149, 25);
+            this.buttonEnregistrerNoteCours.Size = new System.Drawing.Size(127, 34);
             this.buttonEnregistrerNoteCours.TabIndex = 11;
             this.buttonEnregistrerNoteCours.Text = "Enregistrer";
             this.buttonEnregistrerNoteCours.UseVisualStyleBackColor = true;

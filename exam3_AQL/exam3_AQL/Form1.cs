@@ -157,37 +157,28 @@ namespace Exam3_AQL
         {
             try
             {
-                if (comboNumEtudiant.Text != "" && comboNumCours.Text != "" && textNoteCoursEtudaint.Text != "" )
+                if (comboNumEtudiant.Text != "" && comboNumCours.Text != "" && textNoteCoursEtudaint.Text != "")
                 {
                     Etudiant etudiant = trouverEtudiant(int.Parse(comboNumEtudiant.Text), ListeEtudiants);
                     Cours cours = trouverCours(int.Parse(comboNumCours.Text), CoursList);
-                    Note note = new Note(int.Parse(comboNumEtudiant.Text), cours.CodeCours, int.Parse(textNoteCoursEtudaint.Text));
+                    Note note = null;
+
+                    if (cours != null)
+                    {
+                        note = new Note(int.Parse(comboNumEtudiant.Text), cours.CodeCours, int.Parse(textNoteCoursEtudaint.Text));
+                    }
                     Donnees donneesEtudiant = new Donnees(etudiant, cours, note);
+
                     if (verifierDoublon(ListeDonnees, etudiant, cours) == false)
                     {
-                        if (int.Parse(textNoteCoursEtudaint.Text) >= 0 && int.Parse(textNoteCoursEtudaint.Text) <= 100 )
-                        {
-                            ListeDonnees.Add(donneesEtudiant);
-                            dataGridView2.Rows.Add(etudiant.NumeroEtudiant, etudiant.Nom, etudiant.Prenom, cours.TitreCours, note.NoteCours);
-                            textNoteCoursEtudaint.Clear();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Vous devez saisir une note ente 0 et 100.");
-                        }
-
+                        verifierNoteEtudiant(etudiant, donneesEtudiant, cours, note);
                     }
                     else
                     {
                         MessageBox.Show("Cet étudiant a déjà une note pour ce cours.");
                     }
 
-                    //tester si le combo contient deja ce code ou non
-                    if (!comboCodeEtudiant.Items.Contains(etudiant.NumeroEtudiant) ) 
-                    {
-                        comboCodeEtudiant.Items.Add(etudiant.NumeroEtudiant);
-                        comboCodeEtudiant.Text = comboCodeEtudiant.Items[0].ToString();
-                    }
+                    verifierSiComboBoxContientCode (etudiant);
                 }
                 else
                 {
@@ -199,7 +190,46 @@ namespace Exam3_AQL
                 MessageBox.Show("Vous devez saisir un nombre dans le champs : Note");
             }
         }
-        
+
+        // Vérifier la note de l'etudiant 
+        private void verifierNoteEtudiant(Etudiant etudiant ,Donnees donneesEtudiant , Cours cours , Note note)
+        {
+            if (int.Parse(textNoteCoursEtudaint.Text) >= 0 && int.Parse(textNoteCoursEtudaint.Text) <= 100)
+            {
+                if (etudiant == null)
+                {
+                    MessageBox.Show("Cet étudiant n'existe pas !");
+                }
+                else if (cours == null)
+                {
+                    MessageBox.Show("Ce cours n'existe pas !");
+                }
+                else
+                {
+                    ListeDonnees.Add(donneesEtudiant);
+                    dataGridView2.Rows.Add(etudiant.NumeroEtudiant, etudiant.Nom, etudiant.Prenom, cours.TitreCours, note.NoteCours);
+                    textNoteCoursEtudaint.Clear();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vous devez saisir une note ente 0 et 100.");
+            }
+        }
+
+        //tester si le combo contient deja ce code ou non
+        private void verifierSiComboBoxContientCode(Etudiant etudiant)
+        {
+            if (etudiant != null)
+            {
+                if (!comboCodeEtudiant.Items.Contains(etudiant.NumeroEtudiant))
+                {
+                    comboCodeEtudiant.Items.Add(etudiant.NumeroEtudiant);
+                    comboCodeEtudiant.Text = comboCodeEtudiant.Items[0].ToString();
+                }
+            }
+        }
+
         //Création d'une liste statique qui sera appelée dans Form2
         public static List<Donnees> donnees;
         private void buttonAfficherReleve_Click(object sender, EventArgs e)

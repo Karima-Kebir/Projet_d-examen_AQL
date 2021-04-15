@@ -18,8 +18,7 @@ namespace Exam3_AQL
         {
             this.NumeroCours = numeroCours;
             this.CodeCours = codeCours;
-            this.TitreCours = titreCours;
-            
+            this.TitreCours = titreCours;           
         }
 
         // Méthode ToString permettant de convertir l'objet cours vers une chaîne de caractère
@@ -39,26 +38,10 @@ namespace Exam3_AQL
             return cours.NumeroCours == this.NumeroCours &&
                 cours.TitreCours == this.TitreCours &&
                 cours.CodeCours == this.CodeCours;
-
         }
         public override int GetHashCode()
         {
             return base.GetHashCode();
         }
-
-
-
     }
-
-
-
-
-
-
-
-
-
-
-
-
 }
