@@ -33,8 +33,7 @@ namespace Exam3_AQL
                     dataGridView1.Rows.Add(d.UnCours.NumeroCours,d.UnCours.CodeCours,d.UnCours.TitreCours,d.rechercherNoteduCours());
                 }
                 
-            }
-         
+            }        
         }
 
         private void buttonFermer_Click(object sender, EventArgs e)
