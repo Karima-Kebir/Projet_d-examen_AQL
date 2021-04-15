@@ -16,9 +16,6 @@ namespace Exam3_AQL
         public Form2()
         {
             InitializeComponent();
-            afficherPrenom.Text = donneesEtudiant[0].UnEtudiant.Prenom;
-            afficherNom.Text = donneesEtudiant[0].UnEtudiant.Nom;
-            afficherNumEtudiant.Text = donneesEtudiant[0].UnEtudiant.NumeroEtudiant.ToString();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -28,15 +25,18 @@ namespace Exam3_AQL
 
         private void afficherNumEtudiant_Click(object sender, EventArgs e)
         {            
+            afficherNumEtudiant.Text = donneesEtudiant[0].UnEtudiant.NumeroEtudiant.ToString();
         }
 
         private void afficherNom_Click(object sender, EventArgs e)
         {
+            afficherNom.Text = donneesEtudiant[0].UnEtudiant.Nom;
         }
 
         private void afficherPrenom_Click(object sender, EventArgs e)
         {
-            
+            afficherPrenom.Text = donneesEtudiant[0].UnEtudiant.Prenom;
+
         }
     }
 }

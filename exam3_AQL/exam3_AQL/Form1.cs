@@ -180,6 +180,7 @@ namespace Exam3_AQL
         {
             Form2 form = new Form2();
             form.Show();
+            if(comboCodeEtudiant.Text != "")
             donnees = recupererDonnees(int.Parse(comboCodeEtudiant.Text),ListeEtudiants, ListeDonnees );
         }
 
