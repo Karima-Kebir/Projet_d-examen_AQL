@@ -22,10 +22,9 @@ namespace Exam3_AQL
 
         public override string ToString()
         {
-            return base.ToString() + "\n" +
-                 "Numéro Etudiant : " + this.NumeroEtudiant + "\n" +
-                 "Code Cours : " + this.CodeCours + "\n" +
-                 "Note Cours : " + this.NoteCours;
+            return "Numéro Etudiant : " + this.NumeroEtudiant + "\n" +
+                    "Code Cours : " + this.CodeCours + "\n" +
+                   "Note Cours : " + this.NoteCours;
         }
 
     }

@@ -11,10 +11,7 @@ namespace Exam3_AQL
         public Etudiant UnEtudiant { get; set; }
         public Cours UnCours { get; set; }
         public Note UneNote { get; set; }
-
-        public static List<Donnees> ListeDeDonnees { get; set; } = new List<Donnees>();
-
-    
+  
 
         public Donnees(Etudiant etudiant, Cours cours, Note note)
         {
@@ -25,9 +22,9 @@ namespace Exam3_AQL
 
         public override string ToString()
         {
-            return this.UnEtudiant.ToString() + "/n" +
-                this.UnCours.ToString() + "/n" +
-                "Note :"+ this.UneNote.NoteCours;
+            return this.UnEtudiant.ToString() + "\n" +
+                this.UnCours.TitreCours +" : " + this.UneNote.NoteCours+ "\n" +
+                "_________________________________"+ "\n";
         }
 
         public override bool Equals(object obj)
@@ -65,6 +62,14 @@ namespace Exam3_AQL
             return donneesTrouve;
         }
 
+        public double noteduCours()
+        {
+            double note = 0;
+            if (this.UnCours.CodeCours == this.UneNote.CodeCours)
+                note = this.UneNote.NoteCours;
+            return note;
+            
+        }
 
     }
 }

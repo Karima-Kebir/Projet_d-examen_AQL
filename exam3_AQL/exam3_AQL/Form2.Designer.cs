@@ -41,6 +41,9 @@ namespace Exam3_AQL
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.afficherNumero = new System.Windows.Forms.Label();
+            this.buttonFermer = new System.Windows.Forms.Button();
+            this.buttonExportReleveEtudiant = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,7 +94,6 @@ namespace Exam3_AQL
             this.afficherNumEtudiant.Name = "afficherNumEtudiant";
             this.afficherNumEtudiant.Size = new System.Drawing.Size(0, 17);
             this.afficherNumEtudiant.TabIndex = 8;
-            this.afficherNumEtudiant.Click += new System.EventHandler(this.afficherNumEtudiant_Click);
             // 
             // afficherNom
             // 
@@ -101,7 +103,6 @@ namespace Exam3_AQL
             this.afficherNom.Size = new System.Drawing.Size(35, 17);
             this.afficherNom.TabIndex = 9;
             this.afficherNom.Text = "nom";
-            this.afficherNom.Click += new System.EventHandler(this.afficherNom_Click);
             // 
             // afficherPrenom
             // 
@@ -111,7 +112,6 @@ namespace Exam3_AQL
             this.afficherPrenom.Size = new System.Drawing.Size(56, 17);
             this.afficherPrenom.TabIndex = 10;
             this.afficherPrenom.Text = "prenom";
-            this.afficherPrenom.Click += new System.EventHandler(this.afficherPrenom_Click);
             // 
             // dataGridView1
             // 
@@ -129,7 +129,6 @@ namespace Exam3_AQL
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(699, 319);
             this.dataGridView1.TabIndex = 11;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Column1
             // 
@@ -163,11 +162,43 @@ namespace Exam3_AQL
             this.Column4.ReadOnly = true;
             this.Column4.Width = 125;
             // 
+            // afficherNumero
+            // 
+            this.afficherNumero.AutoSize = true;
+            this.afficherNumero.Location = new System.Drawing.Point(161, 118);
+            this.afficherNumero.Name = "afficherNumero";
+            this.afficherNumero.Size = new System.Drawing.Size(114, 17);
+            this.afficherNumero.TabIndex = 12;
+            this.afficherNumero.Text = "Numero Etudiant";
+            // 
+            // buttonFermer
+            // 
+            this.buttonFermer.Location = new System.Drawing.Point(844, 487);
+            this.buttonFermer.Name = "buttonFermer";
+            this.buttonFermer.Size = new System.Drawing.Size(141, 37);
+            this.buttonFermer.TabIndex = 13;
+            this.buttonFermer.Text = "Fermer";
+            this.buttonFermer.UseVisualStyleBackColor = true;
+            this.buttonFermer.Click += new System.EventHandler(this.buttonFermer_Click);
+            // 
+            // buttonExportReleveEtudiant
+            // 
+            this.buttonExportReleveEtudiant.Location = new System.Drawing.Point(609, 487);
+            this.buttonExportReleveEtudiant.Name = "buttonExportReleveEtudiant";
+            this.buttonExportReleveEtudiant.Size = new System.Drawing.Size(212, 36);
+            this.buttonExportReleveEtudiant.TabIndex = 14;
+            this.buttonExportReleveEtudiant.Text = "Export Revelé Etudiant";
+            this.buttonExportReleveEtudiant.UseVisualStyleBackColor = true;
+            this.buttonExportReleveEtudiant.Click += new System.EventHandler(this.buttonExportReleveEtudiant_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1035, 584);
+            this.Controls.Add(this.buttonExportReleveEtudiant);
+            this.Controls.Add(this.buttonFermer);
+            this.Controls.Add(this.afficherNumero);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.afficherPrenom);
             this.Controls.Add(this.afficherNom);
@@ -178,6 +209,7 @@ namespace Exam3_AQL
             this.Controls.Add(this.label1);
             this.Name = "Form2";
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -198,5 +230,8 @@ namespace Exam3_AQL
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.Label afficherNumero;
+        private System.Windows.Forms.Button buttonFermer;
+        private System.Windows.Forms.Button buttonExportReleveEtudiant;
     }
 }

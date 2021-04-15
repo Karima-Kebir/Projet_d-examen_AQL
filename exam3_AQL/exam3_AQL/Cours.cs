@@ -27,10 +27,9 @@ namespace Exam3_AQL
         // Méthode ToString permettant de convertir l'objet cours vers une chaîne de caractère
         public override string ToString()
         {
-            return base.ToString() + "\n" +
-                 "Numéro de cours : " + this.NumeroCours + "\n" +
-                 "Code : " + this.CodeCours + "\n" +
-                 "Titre : " + this.TitreCours;
+            return  "Numéro de cours : " + this.NumeroCours + "\n" +
+                    "Code : " + this.CodeCours + "\n" +
+                    "Titre : " + this.TitreCours;
         }
 
         public override bool Equals(object obj)
