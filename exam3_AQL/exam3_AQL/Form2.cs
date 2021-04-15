@@ -19,31 +19,19 @@ namespace Exam3_AQL
             InitializeComponent();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void afficherNumEtudiant_Click(object sender, EventArgs e)
-        {            
-        }
-
-        private void afficherNom_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void afficherPrenom_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void Form2_Load(object sender, EventArgs e)
         {
             if(DonneesEtudiant.Count() != 0)
             {
+                afficherNumero.Text = DonneesEtudiant[0].UnEtudiant.NumeroEtudiant.ToString();
                 afficherPrenom.Text = DonneesEtudiant[0].UnEtudiant.Prenom;
                 afficherNom.Text = DonneesEtudiant[0].UnEtudiant.Nom;
                 afficherNumEtudiant.Text = DonneesEtudiant[0].UnEtudiant.NumeroEtudiant.ToString();
+                foreach (Donnees d in DonneesEtudiant)
+                {
+                    dataGridView1.Rows.Add(d.UnCours.NumeroCours,d.UnCours.CodeCours,d.UnCours.TitreCours,d.noteduCours());
+                }
+                
             }
          
         }

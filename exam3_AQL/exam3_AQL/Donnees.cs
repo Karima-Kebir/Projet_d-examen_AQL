@@ -65,6 +65,14 @@ namespace Exam3_AQL
             return donneesTrouve;
         }
 
+        public double noteduCours()
+        {
+            double note = 0;
+            if (this.UnCours.CodeCours == this.UneNote.CodeCours)
+                note = this.UneNote.NoteCours;
+            return note;
+            
+        }
 
     }
 }

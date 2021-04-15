@@ -41,6 +41,7 @@ namespace Exam3_AQL
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.afficherNumero = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,7 +92,6 @@ namespace Exam3_AQL
             this.afficherNumEtudiant.Name = "afficherNumEtudiant";
             this.afficherNumEtudiant.Size = new System.Drawing.Size(0, 17);
             this.afficherNumEtudiant.TabIndex = 8;
-            this.afficherNumEtudiant.Click += new System.EventHandler(this.afficherNumEtudiant_Click);
             // 
             // afficherNom
             // 
@@ -101,7 +101,6 @@ namespace Exam3_AQL
             this.afficherNom.Size = new System.Drawing.Size(35, 17);
             this.afficherNom.TabIndex = 9;
             this.afficherNom.Text = "nom";
-            this.afficherNom.Click += new System.EventHandler(this.afficherNom_Click);
             // 
             // afficherPrenom
             // 
@@ -111,7 +110,6 @@ namespace Exam3_AQL
             this.afficherPrenom.Size = new System.Drawing.Size(56, 17);
             this.afficherPrenom.TabIndex = 10;
             this.afficherPrenom.Text = "prenom";
-            this.afficherPrenom.Click += new System.EventHandler(this.afficherPrenom_Click);
             // 
             // dataGridView1
             // 
@@ -129,7 +127,6 @@ namespace Exam3_AQL
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(699, 319);
             this.dataGridView1.TabIndex = 11;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Column1
             // 
@@ -163,11 +160,21 @@ namespace Exam3_AQL
             this.Column4.ReadOnly = true;
             this.Column4.Width = 125;
             // 
+            // afficherNumero
+            // 
+            this.afficherNumero.AutoSize = true;
+            this.afficherNumero.Location = new System.Drawing.Point(161, 118);
+            this.afficherNumero.Name = "afficherNumero";
+            this.afficherNumero.Size = new System.Drawing.Size(114, 17);
+            this.afficherNumero.TabIndex = 12;
+            this.afficherNumero.Text = "Numero Etudiant";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1035, 584);
+            this.Controls.Add(this.afficherNumero);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.afficherPrenom);
             this.Controls.Add(this.afficherNom);
@@ -199,5 +206,6 @@ namespace Exam3_AQL
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.Label afficherNumero;
     }
 }
