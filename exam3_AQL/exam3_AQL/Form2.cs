@@ -14,6 +14,7 @@ namespace Exam3_AQL
     public partial class Form2 : Form
     {
         public List<Donnees> DonneesEtudiant { get; set; }
+        public List<Note> NoteEtudiant = new List<Note>();
 
         public Form2()
         {
@@ -30,9 +31,10 @@ namespace Exam3_AQL
                 afficherNumEtudiant.Text = DonneesEtudiant[0].UnEtudiant.NumeroEtudiant.ToString();
                 foreach (Donnees d in DonneesEtudiant)
                 {
+                    NoteEtudiant.Add(d.UneNote);
                     dataGridView1.Rows.Add(d.UnCours.NumeroCours,d.UnCours.CodeCours,d.UnCours.TitreCours,d.noteduCours());
                 }
-                
+                double moyenneEtudiant = calculerMoyemme(NoteEtudiant);
             }
          
         }
@@ -71,6 +73,20 @@ namespace Exam3_AQL
                     write.Dispose();
                 }
             }
+
+        private double calculerMoyemme(List<Note> listeNotes )
+        {
+            double resultat = 0;
+            if (listeNotes.Count() != 0)
+            {
+                
+                foreach (Note note in listeNotes)
+                {
+                    resultat += note.NoteCours;
+                }                
+            }
+            return resultat / listeNotes.Count();
+        }
            
         }
     }
