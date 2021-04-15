@@ -178,12 +178,12 @@ namespace Exam3_AQL
             // 
             // buttonAfficherReleve
             // 
-            this.buttonAfficherReleve.Location = new System.Drawing.Point(430, 75);
+            this.buttonAfficherReleve.Location = new System.Drawing.Point(489, 76);
             this.buttonAfficherReleve.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonAfficherReleve.Name = "buttonAfficherReleve";
-            this.buttonAfficherReleve.Size = new System.Drawing.Size(143, 24);
+            this.buttonAfficherReleve.Size = new System.Drawing.Size(184, 31);
             this.buttonAfficherReleve.TabIndex = 21;
-            this.buttonAfficherReleve.Text = "Afficher relevé";
+            this.buttonAfficherReleve.Text = "Afficher relevé des notes";
             this.buttonAfficherReleve.UseVisualStyleBackColor = true;
             this.buttonAfficherReleve.Click += new System.EventHandler(this.buttonAfficherReleve_Click);
             // 
@@ -309,6 +309,7 @@ namespace Exam3_AQL
             this.buttonExpotTxt.TabIndex = 22;
             this.buttonExpotTxt.Text = "Exporter tous les Etudiants en txt";
             this.buttonExpotTxt.UseVisualStyleBackColor = true;
+            this.buttonExpotTxt.Click += new System.EventHandler(this.buttonExpotTxt_Click);
             // 
             // dataGridView2
             // 

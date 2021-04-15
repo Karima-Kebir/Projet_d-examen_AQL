@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -234,5 +235,39 @@ namespace Exam3_AQL
 
         }
 
+        private void buttonExpotTxt_Click(object sender, EventArgs e)
+        {
+            
+            string str = "";
+           
+                if (ListeDonnees.Count()!=0)
+                {
+                foreach(Etudiant etud in ListeEtudiants)
+                {
+                    List<Donnees> donnesEtudiant = RechercherDonneesEtudiant(this.ListeDonnees, etud.NumeroEtudiant);
+                    if (donnesEtudiant.Count() != 0)
+                    {
+                        foreach (Donnees d in donnesEtudiant)
+                        {
+                            str += d.ToString();
+                        }
+                    }
+                }
+                    SaveFileDialog sfd = new SaveFileDialog();
+                    sfd.Filter = "WAP Files (*.txt)|*.txt";
+                    sfd.OverwritePrompt = true;
+                    if (sfd.ShowDialog() == DialogResult.OK)
+                    {
+                        StreamWriter write = new StreamWriter(File.Create(sfd.FileName));
+                        write.WriteLine(str);
+
+                        write.Close();
+                        write.Dispose();
+                    }
+                }
+                else MessageBox.Show("Pas de donnees a Exporter !");
+            
+            
+        }
     }
 }

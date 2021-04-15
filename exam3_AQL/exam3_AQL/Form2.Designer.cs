@@ -42,6 +42,7 @@ namespace Exam3_AQL
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.afficherNumero = new System.Windows.Forms.Label();
+            this.buttonFermer = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -169,11 +170,22 @@ namespace Exam3_AQL
             this.afficherNumero.TabIndex = 12;
             this.afficherNumero.Text = "Numero Etudiant";
             // 
+            // buttonFermer
+            // 
+            this.buttonFermer.Location = new System.Drawing.Point(844, 487);
+            this.buttonFermer.Name = "buttonFermer";
+            this.buttonFermer.Size = new System.Drawing.Size(141, 37);
+            this.buttonFermer.TabIndex = 13;
+            this.buttonFermer.Text = "Fermer";
+            this.buttonFermer.UseVisualStyleBackColor = true;
+            this.buttonFermer.Click += new System.EventHandler(this.buttonFermer_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1035, 584);
+            this.Controls.Add(this.buttonFermer);
             this.Controls.Add(this.afficherNumero);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.afficherPrenom);
@@ -207,5 +219,6 @@ namespace Exam3_AQL
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.Label afficherNumero;
+        private System.Windows.Forms.Button buttonFermer;
     }
 }

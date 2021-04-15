@@ -35,5 +35,10 @@ namespace Exam3_AQL
             }
          
         }
+
+        private void buttonFermer_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
