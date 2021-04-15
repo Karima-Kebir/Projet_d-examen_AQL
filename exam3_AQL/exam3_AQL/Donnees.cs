@@ -12,6 +12,8 @@ namespace Exam3_AQL
         public Cours UnCours { get; set; }
         public Note UneNote { get; set; }
 
+        public static List<Donnees> ListeDeDonnees { get; set; } = new List<Donnees>();
+
     
 
         public Donnees(Etudiant etudiant, Cours cours, Note note)
@@ -46,9 +48,7 @@ namespace Exam3_AQL
             {
                 listDonnees.Add(donnees);
             }
-
             return listDonnees;
-
         }
         //chercher les donnees d'un etudiant dans un registre : tout les lignes cours + note 
         public List<Donnees> RechercherDonneesEtudiant(List<Donnees> listDonnees, int NumEtudiant)
