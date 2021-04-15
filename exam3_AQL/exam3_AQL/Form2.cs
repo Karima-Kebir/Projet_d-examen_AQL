@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -40,5 +41,37 @@ namespace Exam3_AQL
         {
             this.Close();
         }
+
+        private void buttonExportReleveEtudiant_Click(object sender, EventArgs e)
+        {
+
+            string str = "";
+
+            if (DonneesEtudiant.Count() != 0)
+            {
+                str += DonneesEtudiant[0].UnEtudiant.ToString();
+                str += "\n==============================================================================\n";
+                foreach (Donnees d in DonneesEtudiant)
+                {
+                    str += "Numero Cours : " + d.UnCours.NumeroCours +" | " + "Code Cours : "+ d.UnCours.CodeCours+ " | "+
+                           "Titre Cours : " + d.UnCours.TitreCours + " | " + "Note : " + d.noteduCours() +
+                        "\n_____________________________________________________________________________\n";
+                }
+
+            }
+            SaveFileDialog sfd = new SaveFileDialog();
+                sfd.Filter = "WAP Files (*.txt)|*.txt";
+                sfd.OverwritePrompt = true;
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    StreamWriter write = new StreamWriter(File.Create(sfd.FileName));
+                    write.WriteLine(str);
+
+                    write.Close();
+                    write.Dispose();
+                }
+            }
+           
+        }
     }
-}
+

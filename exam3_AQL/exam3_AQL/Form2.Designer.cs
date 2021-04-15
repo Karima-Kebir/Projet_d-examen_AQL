@@ -43,6 +43,7 @@ namespace Exam3_AQL
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.afficherNumero = new System.Windows.Forms.Label();
             this.buttonFermer = new System.Windows.Forms.Button();
+            this.buttonExportReleveEtudiant = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -180,11 +181,22 @@ namespace Exam3_AQL
             this.buttonFermer.UseVisualStyleBackColor = true;
             this.buttonFermer.Click += new System.EventHandler(this.buttonFermer_Click);
             // 
+            // buttonExportReleveEtudiant
+            // 
+            this.buttonExportReleveEtudiant.Location = new System.Drawing.Point(609, 487);
+            this.buttonExportReleveEtudiant.Name = "buttonExportReleveEtudiant";
+            this.buttonExportReleveEtudiant.Size = new System.Drawing.Size(212, 36);
+            this.buttonExportReleveEtudiant.TabIndex = 14;
+            this.buttonExportReleveEtudiant.Text = "Export Revelé Etudiant";
+            this.buttonExportReleveEtudiant.UseVisualStyleBackColor = true;
+            this.buttonExportReleveEtudiant.Click += new System.EventHandler(this.buttonExportReleveEtudiant_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1035, 584);
+            this.Controls.Add(this.buttonExportReleveEtudiant);
             this.Controls.Add(this.buttonFermer);
             this.Controls.Add(this.afficherNumero);
             this.Controls.Add(this.dataGridView1);
@@ -220,5 +232,6 @@ namespace Exam3_AQL
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.Label afficherNumero;
         private System.Windows.Forms.Button buttonFermer;
+        private System.Windows.Forms.Button buttonExportReleveEtudiant;
     }
 }
