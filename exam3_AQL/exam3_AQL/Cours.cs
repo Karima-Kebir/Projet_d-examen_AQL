@@ -8,14 +8,12 @@ namespace Exam3_AQL
 {
    public class Cours
     {  
-        // Proprités de la classe cours
 
         public int NumeroCours { get; set; }
         public string CodeCours { get; set; }
         public string TitreCours { get; set; }
         
 
-        // Constructeur initialisant tous les attributs de la classe cours
         public Cours(int numeroCours, string codeCours, string titreCours)
         {
             this.NumeroCours = numeroCours;
@@ -27,12 +25,12 @@ namespace Exam3_AQL
         // Méthode ToString permettant de convertir l'objet cours vers une chaîne de caractère
         public override string ToString()
         {
-            return base.ToString() + "\n" +
-                 "Numéro de cours : " + this.NumeroCours + "\n" +
-                 "Code : " + this.CodeCours + "\n" +
-                 "Titre : " + this.TitreCours;
+            return  "Numéro de cours : " + this.NumeroCours + "\n" +
+                    "Code : " + this.CodeCours + "\n" +
+                    "Titre : " + this.TitreCours;
         }
 
+        // Méthode ToString permettant de comparer deux cours
         public override bool Equals(object obj)
         {
             if (!(obj is Cours)) return false;
@@ -43,11 +41,14 @@ namespace Exam3_AQL
                 cours.CodeCours == this.CodeCours;
 
         }
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
 
 
 
-
- }
+    }
 
 
 

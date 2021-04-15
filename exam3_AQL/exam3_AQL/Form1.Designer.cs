@@ -50,6 +50,7 @@ namespace Exam3_AQL
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textNumEtudiant = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.buttonExpotTxt = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,7 +62,6 @@ namespace Exam3_AQL
             this.label2 = new System.Windows.Forms.Label();
             this.comboNumEtudiant = new System.Windows.Forms.ComboBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.buttonExpotTxt = new System.Windows.Forms.Button();
             this.buttonAjoutCours = new System.Windows.Forms.Button();
             this.textTitreCours = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -74,6 +74,7 @@ namespace Exam3_AQL
             this.label4 = new System.Windows.Forms.Label();
             this.textNumCours = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEtudiant)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -116,7 +117,6 @@ namespace Exam3_AQL
             this.textNoteCoursEtudaint.Name = "textNoteCoursEtudaint";
             this.textNoteCoursEtudaint.Size = new System.Drawing.Size(95, 22);
             this.textNoteCoursEtudaint.TabIndex = 10;
-
             // 
             // label6
             // 
@@ -141,7 +141,7 @@ namespace Exam3_AQL
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(27, 21);
+            this.label8.Location = new System.Drawing.Point(27, 22);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(928, 17);
             this.label8.TabIndex = 17;
@@ -152,7 +152,7 @@ namespace Exam3_AQL
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(387, 46);
+            this.label9.Location = new System.Drawing.Point(387, 9);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(196, 29);
             this.label9.TabIndex = 18;
@@ -161,7 +161,7 @@ namespace Exam3_AQL
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(13, 82);
+            this.label10.Location = new System.Drawing.Point(11, 82);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(156, 17);
             this.label10.TabIndex = 19;
@@ -170,7 +170,7 @@ namespace Exam3_AQL
             // comboCodeEtudiant
             // 
             this.comboCodeEtudiant.FormattingEnabled = true;
-            this.comboCodeEtudiant.Location = new System.Drawing.Point(176, 76);
+            this.comboCodeEtudiant.Location = new System.Drawing.Point(214, 76);
             this.comboCodeEtudiant.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboCodeEtudiant.Name = "comboCodeEtudiant";
             this.comboCodeEtudiant.Size = new System.Drawing.Size(177, 24);
@@ -178,13 +178,14 @@ namespace Exam3_AQL
             // 
             // buttonAfficherReleve
             // 
-            this.buttonAfficherReleve.Location = new System.Drawing.Point(619, 76);
+            this.buttonAfficherReleve.Location = new System.Drawing.Point(489, 76);
             this.buttonAfficherReleve.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonAfficherReleve.Name = "buttonAfficherReleve";
-            this.buttonAfficherReleve.Size = new System.Drawing.Size(129, 25);
+            this.buttonAfficherReleve.Size = new System.Drawing.Size(184, 31);
             this.buttonAfficherReleve.TabIndex = 21;
-            this.buttonAfficherReleve.Text = "Afficher relevé";
+            this.buttonAfficherReleve.Text = "Afficher relevé des notes";
             this.buttonAfficherReleve.UseVisualStyleBackColor = true;
+            this.buttonAfficherReleve.Click += new System.EventHandler(this.buttonAfficherReleve_Click);
             // 
             // dataGridViewEtudiant
             // 
@@ -196,6 +197,7 @@ namespace Exam3_AQL
             this.dataGridViewEtudiant.Location = new System.Drawing.Point(12, 158);
             this.dataGridViewEtudiant.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewEtudiant.Name = "dataGridViewEtudiant";
+            this.dataGridViewEtudiant.ReadOnly = true;
             this.dataGridViewEtudiant.RowHeadersWidth = 51;
             this.dataGridViewEtudiant.RowTemplate.Height = 24;
             this.dataGridViewEtudiant.Size = new System.Drawing.Size(552, 149);
@@ -280,6 +282,7 @@ namespace Exam3_AQL
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.buttonExpotTxt);
             this.groupBox3.Controls.Add(this.dataGridView2);
             this.groupBox3.Controls.Add(this.comboNumCours);
             this.groupBox3.Controls.Add(this.label11);
@@ -292,10 +295,21 @@ namespace Exam3_AQL
             this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox3.Size = new System.Drawing.Size(1103, 263);
+            this.groupBox3.Size = new System.Drawing.Size(1174, 296);
             this.groupBox3.TabIndex = 28;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Ajout Note pour un etudiant";
+            // 
+            // buttonExpotTxt
+            // 
+            this.buttonExpotTxt.Location = new System.Drawing.Point(392, 255);
+            this.buttonExpotTxt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonExpotTxt.Name = "buttonExpotTxt";
+            this.buttonExpotTxt.Size = new System.Drawing.Size(281, 28);
+            this.buttonExpotTxt.TabIndex = 22;
+            this.buttonExpotTxt.Text = "Exporter tous les Etudiants en txt";
+            this.buttonExpotTxt.UseVisualStyleBackColor = true;
+            this.buttonExpotTxt.Click += new System.EventHandler(this.buttonExpotTxt_Click);
             // 
             // dataGridView2
             // 
@@ -309,9 +323,10 @@ namespace Exam3_AQL
             this.dataGridView2.Location = new System.Drawing.Point(12, 96);
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(969, 146);
+            this.dataGridView2.Size = new System.Drawing.Size(977, 146);
             this.dataGridView2.TabIndex = 32;
             // 
             // dataGridViewTextBoxColumn4
@@ -384,38 +399,26 @@ namespace Exam3_AQL
             this.comboNumEtudiant.Name = "comboNumEtudiant";
             this.comboNumEtudiant.Size = new System.Drawing.Size(152, 24);
             this.comboNumEtudiant.TabIndex = 8;
-            this.comboNumEtudiant.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.buttonExpotTxt);
             this.groupBox4.Controls.Add(this.label9);
             this.groupBox4.Controls.Add(this.label8);
             this.groupBox4.Controls.Add(this.label10);
             this.groupBox4.Controls.Add(this.comboCodeEtudiant);
             this.groupBox4.Controls.Add(this.buttonAfficherReleve);
-            this.groupBox4.Location = new System.Drawing.Point(12, 601);
+            this.groupBox4.Location = new System.Drawing.Point(12, 630);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox4.Size = new System.Drawing.Size(1104, 155);
+            this.groupBox4.Size = new System.Drawing.Size(1174, 127);
             this.groupBox4.TabIndex = 29;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Relevé de Notes d\'un Etudiant";
             // 
-            // buttonExpotTxt
-            // 
-            this.buttonExpotTxt.Location = new System.Drawing.Point(619, 117);
-            this.buttonExpotTxt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonExpotTxt.Name = "buttonExpotTxt";
-            this.buttonExpotTxt.Size = new System.Drawing.Size(237, 25);
-            this.buttonExpotTxt.TabIndex = 22;
-            this.buttonExpotTxt.Text = "Exporter tout les Etudiants en txt";
-            this.buttonExpotTxt.UseVisualStyleBackColor = true;
-            // 
             // buttonAjoutCours
             // 
-            this.buttonAjoutCours.Location = new System.Drawing.Point(392, 87);
+            this.buttonAjoutCours.Location = new System.Drawing.Point(464, 89);
             this.buttonAjoutCours.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAjoutCours.Name = "buttonAjoutCours";
             this.buttonAjoutCours.Size = new System.Drawing.Size(122, 28);
@@ -470,9 +473,10 @@ namespace Exam3_AQL
             this.dataGridView.Location = new System.Drawing.Point(8, 149);
             this.dataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView.Name = "dataGridView";
+            this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersWidth = 51;
             this.dataGridView.RowTemplate.Height = 24;
-            this.dataGridView.Size = new System.Drawing.Size(506, 149);
+            this.dataGridView.Size = new System.Drawing.Size(578, 149);
             this.dataGridView.TabIndex = 22;
             // 
             // Column1
@@ -510,6 +514,7 @@ namespace Exam3_AQL
             this.textNumCours.Location = new System.Drawing.Point(172, 35);
             this.textNumCours.Margin = new System.Windows.Forms.Padding(4);
             this.textNumCours.Name = "textNumCours";
+            this.textNumCours.ReadOnly = true;
             this.textNumCours.Size = new System.Drawing.Size(168, 22);
             this.textNumCours.TabIndex = 4;
             // 
@@ -527,16 +532,20 @@ namespace Exam3_AQL
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(523, 304);
+            this.groupBox1.Size = new System.Drawing.Size(594, 304);
             this.groupBox1.TabIndex = 26;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ajout Nouveau Cours";
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1128, 768);
+            this.ClientSize = new System.Drawing.Size(1199, 768);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -607,6 +616,7 @@ namespace Exam3_AQL
         private System.Windows.Forms.TextBox textNumCours;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox textNumEtudiant;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 

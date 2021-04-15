@@ -23,10 +23,9 @@ namespace Exam3_AQL
 
         public override string ToString()
         {
-            return base.ToString() + "\n" +
-                 "Numéro Etudiant : " + this.NumeroEtudiant + "\n" +
-                 "Nom : " + this.Nom + "\n" +
-                 "Prenom : " + this.Prenom;
+            return "Numéro Etudiant : " + this.NumeroEtudiant + "\n" +
+                   "Nom : " + this.Nom + "\n" +
+                   "Prenom : " + this.Prenom ;
         }
 
         public override bool Equals(object obj)

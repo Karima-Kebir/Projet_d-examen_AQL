@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,12 +13,10 @@ namespace Exam3_AQL
 {
     public partial class Form1 : Form
     {
-
         private int incrementCours = 1;
         public List<Cours> CoursList = new List<Cours>();
         public List<Etudiant> ListeEtudiants = new List<Etudiant>();
         public List<Donnees> ListeDonnees = new List<Donnees>();
-
 
         public Form1()
         {
@@ -28,43 +27,37 @@ namespace Exam3_AQL
         private void Form1_Load(object sender, EventArgs e)
         {
             textNumCours.Text = incrementCours.ToString();
-			textNumEtudiant.Text = 1 +"";
 
         }
 
         //Bouton Ajouter cours
         private void buttonAjoutCours_Click(object sender, EventArgs e)
         {
-                if (textCodeCours.Text != "" && textTitreCours.Text != "")
-                {
-                    Cours cours = new Cours(int.Parse(textNumCours.Text), textCodeCours.Text, textTitreCours.Text);
+            if (textCodeCours.Text != "" && textTitreCours.Text != "")
+            {
+                Cours cours = new Cours(int.Parse(textNumCours.Text), textCodeCours.Text, textTitreCours.Text);
 
-                    dataGridView.Rows.Add(cours.NumeroCours, cours.CodeCours, cours.TitreCours);
-                    CoursList.Add(cours);
-                    incrementCours++;
+                dataGridView.Rows.Add(cours.NumeroCours, cours.CodeCours, cours.TitreCours);
+                CoursList.Add(cours);
+                incrementCours++;
 
-                    textNumCours.Text = incrementCours.ToString();
-                    textCodeCours.Clear();
-                    textTitreCours.Clear();
+                textNumCours.Text = incrementCours.ToString();
+                textCodeCours.Clear();
+                textTitreCours.Clear();
 
-                    if (CoursList.Count() != 0)
-                        remplirComboCours(CoursList);
-                }
-                else
-                {
-                    MessageBox.Show("Vous devez saisir tous les champs");
-                }
+                if (CoursList.Count() != 0)
+                    remplirComboCours(CoursList);
+            }
+            else
+            {
+                MessageBox.Show("Vous devez saisir tous les champs !");
+            }
         }
 
-  
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void buttonAjoutEtudiant_Click(object sender, EventArgs e)
         {
-             if(textNomEtudiant.Text !="" && textPrenomEtudiant.Text != "")
+                if (textNomEtudiant.Text != "" && textPrenomEtudiant.Text != "")
                 {
                     Etudiant etudiant = new Etudiant(textNomEtudiant.Text, textPrenomEtudiant.Text);
 
@@ -85,37 +78,27 @@ namespace Exam3_AQL
                     {
                         remplirComboEtudiant(ListeEtudiants);
                     }
-                        
                 }
                 else
                 {
                     MessageBox.Show("Vous devez saisir tous les champs");
                 }
-            
-        
+          
         }
+
+
         //remplir le comboBox avec les numeros des etudiants deja saisies
         private void remplirComboEtudiant(List<Etudiant> listetudiant)
         {
             comboNumEtudiant.Items.Clear();
-            for (int i=0; i < listetudiant.Count(); i++)
+            for (int i = 0; i < listetudiant.Count(); i++)
             {
                 comboNumEtudiant.Items.Add(listetudiant[i].NumeroEtudiant);
             }
             comboNumEtudiant.Text = listetudiant[0].NumeroEtudiant.ToString();
 
         }
-        //remplir le comboBox avec les numeros des etudiants deja saisies
-        private void remplirComboCodeEtudiant(List<Etudiant> listetudiant)
-        {
-            comboCodeEtudiant.Items.Clear();
-            for (int i = 0; i < listetudiant.Count(); i++)
-            {
-                comboCodeEtudiant.Items.Add(listetudiant[i].NumeroEtudiant);
-            }
-            comboCodeEtudiant.Text = listetudiant[0].NumeroEtudiant.ToString();
-
-        }
+  
         //remplir le comboBox avec les numeros des cours deja saisies
         private void remplirComboCours(List<Cours> listcours)
         {
@@ -148,6 +131,34 @@ namespace Exam3_AQL
             return null;
         }
 
+        //chercher les donnees d'un etudiant dans un registre : tout les lignes cours + note 
+        public List<Donnees> RechercherDonneesEtudiant(List<Donnees> listDonnees, int NumEtudiant)
+        {
+            List<Donnees> donneesTrouve = new List<Donnees>();
+            foreach (Donnees d in listDonnees)
+            {
+                if (d.UnEtudiant.NumeroEtudiant == NumEtudiant)
+                {
+                    donneesTrouve.Add(d);
+                }
+
+            }
+            return donneesTrouve;
+        }
+
+
+
+        //Verifie si la liste contient la meme ligne pour le meme etudiant et le meme cours
+        private bool verifieDoublant(List<Donnees> listedonnee, Etudiant etudiant, Cours cours)
+        {
+            bool test = false;
+            foreach (Donnees d in listedonnee)
+            {
+                if (d.UnEtudiant.Equals(etudiant) && d.UnCours.Equals(cours))
+                    test= true; 
+            }
+            return test;
+        }
         private void buttonEnregistrerNoteCours_Click(object sender, EventArgs e)
         {
             try
@@ -158,14 +169,31 @@ namespace Exam3_AQL
                     Cours cours = findCours(int.Parse(comboNumCours.Text), CoursList);
                     Note note = new Note(int.Parse(comboNumEtudiant.Text), cours.CodeCours, int.Parse(textNoteCoursEtudaint.Text));
                     Donnees donneesEtudiant = new Donnees(etudiant, cours, note);
+                    if (verifieDoublant(ListeDonnees,etudiant,cours)==false)
+                    {
+                        if(int.Parse(textNoteCoursEtudaint.Text) >=0 && int.Parse(textNoteCoursEtudaint.Text) <= 100)
+                        {
+                            ListeDonnees.Add(donneesEtudiant);
+                            dataGridView2.Rows.Add(etudiant.NumeroEtudiant, etudiant.Nom, etudiant.Prenom, cours.TitreCours, note.NoteCours);
+                            textNoteCoursEtudaint.Clear();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Saisissez une note ente 0 et 100");
+                        }
 
-                    dataGridView2.Rows.Add(etudiant.NumeroEtudiant, etudiant.Nom, etudiant.Prenom, cours.TitreCours, note.NoteCours);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cet etudiant a deja une note pour ce cours");
+                    }
                     
-                    ListeDonnees.Add(donneesEtudiant);
-                   
-                    textNoteCoursEtudaint.Clear();
-                    comboCodeEtudiant.Items.Add(etudiant.NumeroEtudiant);
-                    comboCodeEtudiant.Text = comboCodeEtudiant.Items[0].ToString();
+
+                    if (!comboCodeEtudiant.Items.Contains(etudiant.NumeroEtudiant)) //tester si le combo contient deja ce code ou non
+                    {
+                        comboCodeEtudiant.Items.Add(etudiant.NumeroEtudiant);
+                        comboCodeEtudiant.Text = comboCodeEtudiant.Items[0].ToString();
+                    }           
                 }
                 else
                 {
@@ -174,9 +202,72 @@ namespace Exam3_AQL
             }
             catch (FormatException)
             {
-                MessageBox.Show("Vous devez saisir un nombre dans le champs : Numéro de cours");
+                MessageBox.Show("Vous devez saisir un nombre dans le champs : Note");
             }
         }
 
+
+        /*******************************************************************************************/
+        public static List<Donnees> donnees;
+        private void buttonAfficherReleve_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if(this.comboCodeEtudiant.Text != "")
+                {
+                    int NumEtudiant = int.Parse(this.comboCodeEtudiant.Text);
+                    if (RechercherDonneesEtudiant(this.ListeDonnees, NumEtudiant).Count()!=0)
+                    {
+                        Form2 form = new Form2();
+                        form.DonneesEtudiant = RechercherDonneesEtudiant(this.ListeDonnees, NumEtudiant);
+                        form.Show();
+                    }
+                    else MessageBox.Show("Cet etudiant n'existe pas ou n'a pas encore des notes");
+                }
+                else MessageBox.Show("Le champ Numero Etudiant est vide");
+
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Vous devez saisir un nombre ");
+            }
+
+
+        }
+
+        private void buttonExpotTxt_Click(object sender, EventArgs e)
+        {
+            
+            string str = "";
+           
+                if (ListeDonnees.Count()!=0)
+                {
+                foreach(Etudiant etud in ListeEtudiants)
+                {
+                    List<Donnees> donnesEtudiant = RechercherDonneesEtudiant(this.ListeDonnees, etud.NumeroEtudiant);
+                    if (donnesEtudiant.Count() != 0)
+                    {
+                        foreach (Donnees d in donnesEtudiant)
+                        {
+                            str += d.ToString();
+                        }
+                    }
+                }
+                    SaveFileDialog sfd = new SaveFileDialog();
+                    sfd.Filter = "WAP Files (*.txt)|*.txt";
+                    sfd.OverwritePrompt = true;
+                    if (sfd.ShowDialog() == DialogResult.OK)
+                    {
+                        StreamWriter write = new StreamWriter(File.Create(sfd.FileName));
+                        write.WriteLine(str);
+
+                        write.Close();
+                        write.Dispose();
+                    }
+                }
+                else MessageBox.Show("Pas de donnees a Exporter !");
+            
+            
+        }
     }
 }
