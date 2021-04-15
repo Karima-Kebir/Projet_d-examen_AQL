@@ -133,6 +133,24 @@ namespace Exam3_AQL
             }
             return null;
         }
+
+        //chercher les donnees d'un etudiant dans un registre : tout les lignes cours + note 
+        public List<Donnees> RechercherDonneesEtudiant(List<Donnees> listDonnees, int NumEtudiant)
+        {
+            List<Donnees> donneesTrouve = new List<Donnees>();
+            foreach (Donnees d in listDonnees)
+            {
+                if (d.UnEtudiant.NumeroEtudiant == NumEtudiant)
+                {
+                    donneesTrouve.Add(d);
+                }
+
+            }
+            return donneesTrouve;
+        }
+
+
+
         //Verifie si la liste contient la meme ligne pour le meme etudiant et le meme cours
         private bool verifieDoublant(List<Donnees> listedonnee, Etudiant etudiant, Cours cours)
         {
@@ -205,10 +223,31 @@ namespace Exam3_AQL
         public static List<Donnees> donnees;
         private void buttonAfficherReleve_Click(object sender, EventArgs e)
         {
-            Form2 form = new Form2();
-            form.Show();
-            donnees = recupererDonnees(int.Parse(comboCodeEtudiant.Text),ListeEtudiants, ListeDonnees );
+            try
+            {
+                if(this.comboCodeEtudiant.Text != "")
+                {
+                    int NumEtudiant = int.Parse(this.comboCodeEtudiant.Text);
+                    if (RechercherDonneesEtudiant(this.ListeDonnees, NumEtudiant).Count()!=0)
+                    {
+                        Form2 form = new Form2();
+                        form.DonneesEtudiant = RechercherDonneesEtudiant(this.ListeDonnees, NumEtudiant);
+                        form.Show();
+                    }
+                    else MessageBox.Show("Cet etudiant n'existe pas ou n'a pas encore des notes");
+                }
+                else MessageBox.Show("Le champ Numero Etudiant est vide");
+
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Vous devez saisir un nombre ");
+            }
+
+
         }
+
+
 
         public List<Donnees> recupererDonnees(int numeroEtudiant, List<Etudiant> listeEtudiants, List<Donnees> listeDeDonnees){
             List<Donnees> listeDonneesEtudiant = new List<Donnees>();
@@ -245,6 +284,11 @@ namespace Exam3_AQL
 
         private void comboCodeEtudiant_SelectedIndexChanged(object sender, EventArgs e)
         {
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

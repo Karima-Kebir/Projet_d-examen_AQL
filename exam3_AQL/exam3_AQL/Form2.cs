@@ -12,13 +12,11 @@ namespace Exam3_AQL
 {
     public partial class Form2 : Form
     {
-        List<Donnees> donneesEtudiant = Form1.donnees;
+        public List<Donnees> DonneesEtudiant { get; set; }
+
         public Form2()
         {
             InitializeComponent();
-            afficherPrenom.Text = donneesEtudiant[0].UnEtudiant.Prenom;
-            afficherNom.Text = donneesEtudiant[0].UnEtudiant.Nom;
-            afficherNumEtudiant.Text = donneesEtudiant[0].UnEtudiant.NumeroEtudiant.ToString();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -37,6 +35,17 @@ namespace Exam3_AQL
         private void afficherPrenom_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            if(DonneesEtudiant.Count() != 0)
+            {
+                afficherPrenom.Text = DonneesEtudiant[0].UnEtudiant.Prenom;
+                afficherNom.Text = DonneesEtudiant[0].UnEtudiant.Nom;
+                afficherNumEtudiant.Text = DonneesEtudiant[0].UnEtudiant.NumeroEtudiant.ToString();
+            }
+         
         }
     }
 }
