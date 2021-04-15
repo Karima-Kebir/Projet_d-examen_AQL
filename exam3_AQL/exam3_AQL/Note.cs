@@ -20,11 +20,31 @@ namespace Exam3_AQL
             this.NoteCours = noteCours;
         }
 
+        // Méthode ToString permettant de convertir l'objet cours vers une chaîne de caractère
+
         public override string ToString()
         {
             return "Numéro Etudiant : " + this.NumeroEtudiant + "\n" +
                     "Code Cours : " + this.CodeCours + "\n" +
                    "Note Cours : " + this.NoteCours;
+        }
+
+
+        // Méthode ToString permettant de comparer deux Notes
+        public override bool Equals(object obj)
+        {
+            if (!(obj is Note)) return false;
+
+            Note note = (Note)obj;
+            return note.NumeroEtudiant == this.NumeroEtudiant &&
+                note.CodeCours == this.CodeCours &&
+               note.NoteCours == this.NoteCours;
+
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
         }
 
     }
