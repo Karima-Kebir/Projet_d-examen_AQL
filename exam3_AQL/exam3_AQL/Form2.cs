@@ -35,6 +35,7 @@ namespace Exam3_AQL
                     dataGridView1.Rows.Add(d.UnCours.NumeroCours,d.UnCours.CodeCours,d.UnCours.TitreCours,d.noteduCours());
                 }
                 double moyenneEtudiant = calculerMoyemme(NoteEtudiant);
+                AfficherMoyenne.Text = moyenneEtudiant.ToString();
             }
          
         }
