@@ -13,7 +13,7 @@ namespace Exam3_AQL
         public string Nom { get; set; }
         public string Prenom { get; set; }
 
-        //Constructeur
+
         public Etudiant(string nom, string prenom)
         {
             this.NumeroEtudiant = ++nombreEtudiants;
@@ -23,10 +23,9 @@ namespace Exam3_AQL
 
         public override string ToString()
         {
-            return base.ToString() + "\n" +
-                 "Numéro Etudiant : " + this.NumeroEtudiant + "\n" +
-                 "Nom : " + this.Nom + "\n" +
-                 "Prenom : " + this.Prenom;
+            return "Numéro Etudiant : " + this.NumeroEtudiant + "\n" +
+                   "Nom : " + this.Nom + "\n" +
+                   "Prenom : " + this.Prenom ;
         }
 
         public override bool Equals(object obj)

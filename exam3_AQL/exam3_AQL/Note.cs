@@ -12,7 +12,7 @@ namespace Exam3_AQL
         public string CodeCours { get; set; }
         public double NoteCours { get; set; }
 
-       
+  
         public Note(int numeroEtudiant, string codeCours, double noteCours)
         {
             this.NumeroEtudiant = numeroEtudiant;
@@ -22,11 +22,9 @@ namespace Exam3_AQL
 
         public override string ToString()
         {
-            return base.ToString() + "\n" +
-                 "Numéro Etudiant : " + this.NumeroEtudiant + "\n" +
-                 "Code Cours : " + this.CodeCours + "\n" +
-                 "Note Cours : " + this.NoteCours;
+            return "Numéro Etudiant : " + this.NumeroEtudiant + "\n" +
+                    "Code Cours : " + this.CodeCours + "\n" +
+                   "Note Cours : " + this.NoteCours;
         }
-
     }
 }

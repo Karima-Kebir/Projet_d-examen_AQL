@@ -12,10 +12,7 @@ namespace Exam3_AQL
         public Cours UnCours { get; set; }
         public Note UneNote { get; set; }
 
-        public static List<Donnees> ListeDeDonnees { get; set; } = new List<Donnees>();
-
-    
-
+  
         public Donnees(Etudiant etudiant, Cours cours, Note note)
         {
             this.UnEtudiant = etudiant;
@@ -25,9 +22,9 @@ namespace Exam3_AQL
 
         public override string ToString()
         {
-            return this.UnEtudiant.ToString() + "/n" +
-                this.UnCours.ToString() + "/n" +
-                "Note :"+ this.UneNote.NoteCours;
+            return this.UnEtudiant.ToString() + "\n" +
+                   this.UnCours.TitreCours +" : " + this.UneNote.NoteCours+ "\n" +
+                   "_________________________________"+ "\n";
         }
 
         public override bool Equals(object obj)
@@ -36,8 +33,13 @@ namespace Exam3_AQL
            
             Donnees d = (Donnees)obj;
             return d.UnCours == this.UnCours && 
-                d.UneNote==this.UneNote && 
-                d.UnEtudiant == this.UnEtudiant;
+                   d.UneNote==this.UneNote && 
+                   d.UnEtudiant == this.UnEtudiant;
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
         }
 
         //ajouter une ligne de donnees (etudiant+cours+note) dans un registre(liste)
@@ -50,8 +52,9 @@ namespace Exam3_AQL
             }
             return listDonnees;
         }
+
         //chercher les donnees d'un etudiant dans un registre : tout les lignes cours + note 
-        public List<Donnees> RechercherDonneesEtudiant(List<Donnees> listDonnees, int NumEtudiant)
+        public List<Donnees> rechercherDonneesEtudiant(List<Donnees> listDonnees, int NumEtudiant)
         {
             List<Donnees> donneesTrouve = new List<Donnees>();
             foreach (Donnees d in listDonnees)
@@ -60,11 +63,18 @@ namespace Exam3_AQL
                 {
                     donneesTrouve.Add(d);
                 }
-
             }
             return donneesTrouve;
         }
 
+        public double rechercherNoteduCours()
+        {
+            double note = 0;
 
+            if (this.UnCours.CodeCours == this.UneNote.CodeCours)
+                note = this.UneNote.NoteCours;
+
+            return note;            
+        }
     }
 }
