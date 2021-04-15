@@ -53,10 +53,6 @@ namespace Exam3_AQL
             }
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void buttonAjoutEtudiant_Click(object sender, EventArgs e)
         {
@@ -210,15 +206,6 @@ namespace Exam3_AQL
         }
 
 
-        private void buttonExpotTxt_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboNumCours_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
         /*******************************************************************************************/
         public static List<Donnees> donnees;
         private void buttonAfficherReleve_Click(object sender, EventArgs e)
@@ -247,48 +234,5 @@ namespace Exam3_AQL
 
         }
 
-
-
-        public List<Donnees> recupererDonnees(int numeroEtudiant, List<Etudiant> listeEtudiants, List<Donnees> listeDeDonnees){
-            List<Donnees> listeDonneesEtudiant = new List<Donnees>();
-            
-            Etudiant etudiant = findEtudiant( numeroEtudiant, listeEtudiants);
-            List<Cours> listeCoursPrisParEtudiant = trouverLesCoursParUnEtudiant(numeroEtudiant, listeDeDonnees) ;
-
-            foreach (Cours cours in listeCoursPrisParEtudiant) {
-                Note note = trouverNoteParCoursParEtudiant(etudiant,cours);
-                Donnees donnee = new Donnees (etudiant,cours, note);
-                listeDonneesEtudiant.Add(donnee);             
-            }
-            return listeDonneesEtudiant;
-        }
-
-
-        private List<Cours> trouverLesCoursParUnEtudiant(int numeroEtudiant , List<Donnees> listeDeDonnees) {
-            List<Cours> listeCours = new List<Cours>();
-            foreach(Donnees donnee in listeDeDonnees)
-            {
-                if (donnee.UnEtudiant.NumeroEtudiant == numeroEtudiant) listeCours.Add(donnee.UnCours);
-            }
-            return listeCours;
-        }
-
-        private Note trouverNoteParCoursParEtudiant(Etudiant etudiant , Cours cours)
-        { 
-            foreach (Donnees donnee in ListeDonnees)
-            {
-                if (donnee.UnEtudiant == etudiant && donnee.UnCours == cours) return donnee.UneNote;
-            }
-            return null;
-        }
-
-        private void comboCodeEtudiant_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void groupBox3_Enter(object sender, EventArgs e)
-        {
-
-        }
     }
 }

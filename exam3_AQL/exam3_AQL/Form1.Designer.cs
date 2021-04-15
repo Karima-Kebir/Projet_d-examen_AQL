@@ -175,7 +175,6 @@ namespace Exam3_AQL
             this.comboCodeEtudiant.Name = "comboCodeEtudiant";
             this.comboCodeEtudiant.Size = new System.Drawing.Size(177, 24);
             this.comboCodeEtudiant.TabIndex = 20;
-            this.comboCodeEtudiant.SelectedIndexChanged += new System.EventHandler(this.comboCodeEtudiant_SelectedIndexChanged);
             // 
             // buttonAfficherReleve
             // 
@@ -299,7 +298,6 @@ namespace Exam3_AQL
             this.groupBox3.TabIndex = 28;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Ajout Note pour un etudiant";
-            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
             // buttonExpotTxt
             // 
@@ -310,7 +308,6 @@ namespace Exam3_AQL
             this.buttonExpotTxt.TabIndex = 22;
             this.buttonExpotTxt.Text = "Exporter tous les Etudiants en txt";
             this.buttonExpotTxt.UseVisualStyleBackColor = true;
-            this.buttonExpotTxt.Click += new System.EventHandler(this.buttonExpotTxt_Click);
             // 
             // dataGridView2
             // 
@@ -372,7 +369,6 @@ namespace Exam3_AQL
             this.comboNumCours.Name = "comboNumCours";
             this.comboNumCours.Size = new System.Drawing.Size(152, 24);
             this.comboNumCours.TabIndex = 9;
-            this.comboNumCours.SelectedIndexChanged += new System.EventHandler(this.comboNumCours_SelectedIndexChanged);
             // 
             // label11
             // 
@@ -400,7 +396,6 @@ namespace Exam3_AQL
             this.comboNumEtudiant.Name = "comboNumEtudiant";
             this.comboNumEtudiant.Size = new System.Drawing.Size(152, 24);
             this.comboNumEtudiant.TabIndex = 8;
-            this.comboNumEtudiant.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // groupBox4
             // 
