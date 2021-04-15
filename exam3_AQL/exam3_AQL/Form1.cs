@@ -133,7 +133,17 @@ namespace Exam3_AQL
             }
             return null;
         }
-
+        //Verifie si la liste contient la meme ligne pour le meme etudiant et le meme cours
+        private bool verifieDoublant(List<Donnees> listedonnee, Etudiant etudiant, Cours cours)
+        {
+            bool test = false;
+            foreach (Donnees d in listedonnee)
+            {
+                if (d.UnEtudiant.Equals(etudiant) && d.UnCours.Equals(cours))
+                    test= true; 
+            }
+            return test;
+        }
         private void buttonEnregistrerNoteCours_Click(object sender, EventArgs e)
         {
             try
@@ -144,14 +154,31 @@ namespace Exam3_AQL
                     Cours cours = findCours(int.Parse(comboNumCours.Text), CoursList);
                     Note note = new Note(int.Parse(comboNumEtudiant.Text), cours.CodeCours, int.Parse(textNoteCoursEtudaint.Text));
                     Donnees donneesEtudiant = new Donnees(etudiant, cours, note);
+                    if (verifieDoublant(ListeDonnees,etudiant,cours)==false)
+                    {
+                        if(int.Parse(textNoteCoursEtudaint.Text) >=0 && int.Parse(textNoteCoursEtudaint.Text) <= 100)
+                        {
+                            ListeDonnees.Add(donneesEtudiant);
+                            dataGridView2.Rows.Add(etudiant.NumeroEtudiant, etudiant.Nom, etudiant.Prenom, cours.TitreCours, note.NoteCours);
+                            textNoteCoursEtudaint.Clear();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Saisissez une note ente 0 et 100");
+                        }
 
-                    dataGridView2.Rows.Add(etudiant.NumeroEtudiant, etudiant.Nom, etudiant.Prenom, cours.TitreCours, note.NoteCours);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cet etudiant a deja une note pour ce cours");
+                    }
+                    
 
-                    ListeDonnees.Add(donneesEtudiant);
-
-                    textNoteCoursEtudaint.Clear();
-                    comboCodeEtudiant.Items.Add(etudiant.NumeroEtudiant);
-                    comboCodeEtudiant.Text = comboCodeEtudiant.Items[0].ToString();
+                    if (!comboCodeEtudiant.Items.Contains(etudiant.NumeroEtudiant)) //tester si le combo contient deja ce code ou non
+                    {
+                        comboCodeEtudiant.Items.Add(etudiant.NumeroEtudiant);
+                        comboCodeEtudiant.Text = comboCodeEtudiant.Items[0].ToString();
+                    }           
                 }
                 else
                 {
@@ -160,7 +187,7 @@ namespace Exam3_AQL
             }
             catch (FormatException)
             {
-                MessageBox.Show("Vous devez saisir un nombre dans le champs : Numéro de cours");
+                MessageBox.Show("Vous devez saisir un nombre dans le champs : Note");
             }
         }
 

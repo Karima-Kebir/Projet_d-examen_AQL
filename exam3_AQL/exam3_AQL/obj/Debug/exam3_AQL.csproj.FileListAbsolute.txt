@@ -29,3 +29,4 @@ D:\Projet_d-examen_AQL\exam3_AQL\Exam3_AQL\obj\Debug\Exam3_AQL.csproj.CoreCompil
 D:\Projet_d-examen_AQL\exam3_AQL\Exam3_AQL\obj\Debug\Exam3_AQL.exe
 D:\Projet_d-examen_AQL\exam3_AQL\Exam3_AQL\obj\Debug\Exam3_AQL.pdb
 D:\Projet_d-examen_AQL\Projet_d-examen_AQL\exam3_AQL\Exam3_AQL\obj\Debug\Exam3_AQL.Form2.resources
+D:\Projet_dexamen_AQL\exam3_AQL\Exam3_AQL\obj\Debug\Exam3_AQL.Form2.resources
