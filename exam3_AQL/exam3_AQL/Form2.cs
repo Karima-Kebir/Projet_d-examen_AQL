@@ -44,7 +44,7 @@ namespace Exam3_AQL
 
         private void buttonExportReleveEtudiant_Click(object sender, EventArgs e)
         {
-
+            
             string str = "";
 
             if (DonneesEtudiant.Count() != 0)
@@ -59,12 +59,12 @@ namespace Exam3_AQL
                 }
 
             }
-            SaveFileDialog sfd = new SaveFileDialog();
-                sfd.Filter = "WAP Files (*.txt)|*.txt";
-                sfd.OverwritePrompt = true;
-                if (sfd.ShowDialog() == DialogResult.OK)
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "WAP Files (*.txt)|*.txt";
+            saveFileDialog.OverwritePrompt = true;
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    StreamWriter write = new StreamWriter(File.Create(sfd.FileName));
+                    StreamWriter write = new StreamWriter(File.Create(saveFileDialog.FileName));
                     write.WriteLine(str);
 
                     write.Close();

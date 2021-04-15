@@ -244,13 +244,13 @@ namespace Exam3_AQL
                     }
                 }
 
-                SaveFileDialog sfd = new SaveFileDialog();
-                sfd.Filter = "WAP Files (*.txt)|*.txt";
-                sfd.OverwritePrompt = true;
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "WAP Files (*.txt)|*.txt";
+                saveFileDialog.OverwritePrompt = true;
 
-                if (sfd.ShowDialog() == DialogResult.OK)
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    StreamWriter write = new StreamWriter(File.Create(sfd.FileName));
+                    StreamWriter write = new StreamWriter(File.Create(saveFileDialog.FileName));
                     write.WriteLine(donnee);
                     write.Close();
                     write.Dispose();
