@@ -46,6 +46,9 @@ namespace Exam3_AQL
             this.buttonExportReleveEtudiant = new System.Windows.Forms.Button();
             this.AfficherMoyenne = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,10 +56,9 @@ namespace Exam3_AQL
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(9, 96);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(12, 118);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 13);
+            this.label1.Size = new System.Drawing.Size(151, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Numéro d\'étudiant :";
             // 
@@ -64,10 +66,9 @@ namespace Exam3_AQL
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(9, 132);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(12, 162);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 13);
+            this.label2.Size = new System.Drawing.Size(70, 17);
             this.label2.TabIndex = 2;
             this.label2.Text = "Nom     :";
             // 
@@ -75,10 +76,9 @@ namespace Exam3_AQL
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(9, 167);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(12, 206);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 13);
+            this.label3.Size = new System.Drawing.Size(72, 17);
             this.label3.TabIndex = 4;
             this.label3.Text = "prénom :";
             // 
@@ -86,39 +86,35 @@ namespace Exam3_AQL
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(211, 37);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(281, 46);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(211, 25);
+            this.label4.Size = new System.Drawing.Size(263, 29);
             this.label4.TabIndex = 6;
             this.label4.Text = "RELEVE DE NOTES";
             // 
             // afficherNumEtudiant
             // 
             this.afficherNumEtudiant.AutoSize = true;
-            this.afficherNumEtudiant.Location = new System.Drawing.Point(124, 96);
-            this.afficherNumEtudiant.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.afficherNumEtudiant.Location = new System.Drawing.Point(165, 118);
             this.afficherNumEtudiant.Name = "afficherNumEtudiant";
-            this.afficherNumEtudiant.Size = new System.Drawing.Size(0, 13);
+            this.afficherNumEtudiant.Size = new System.Drawing.Size(0, 17);
             this.afficherNumEtudiant.TabIndex = 8;
             // 
             // afficherNom
             // 
             this.afficherNom.AutoSize = true;
-            this.afficherNom.Location = new System.Drawing.Point(68, 132);
-            this.afficherNom.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.afficherNom.Location = new System.Drawing.Point(91, 162);
             this.afficherNom.Name = "afficherNom";
-            this.afficherNom.Size = new System.Drawing.Size(27, 13);
+            this.afficherNom.Size = new System.Drawing.Size(35, 17);
             this.afficherNom.TabIndex = 9;
             this.afficherNom.Text = "nom";
             // 
             // afficherPrenom
             // 
             this.afficherPrenom.AutoSize = true;
-            this.afficherPrenom.Location = new System.Drawing.Point(68, 167);
-            this.afficherPrenom.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.afficherPrenom.Location = new System.Drawing.Point(91, 206);
             this.afficherPrenom.Name = "afficherPrenom";
-            this.afficherPrenom.Size = new System.Drawing.Size(42, 13);
+            this.afficherPrenom.Size = new System.Drawing.Size(56, 17);
             this.afficherPrenom.TabIndex = 10;
             this.afficherPrenom.Text = "prenom";
             // 
@@ -131,13 +127,13 @@ namespace Exam3_AQL
             this.Column2,
             this.Column3,
             this.Column4});
-            this.dataGridView1.Location = new System.Drawing.Point(214, 96);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView1.Location = new System.Drawing.Point(285, 118);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(524, 259);
+            this.dataGridView1.Size = new System.Drawing.Size(699, 319);
             this.dataGridView1.TabIndex = 11;
             // 
             // Column1
@@ -175,19 +171,18 @@ namespace Exam3_AQL
             // afficherNumero
             // 
             this.afficherNumero.AutoSize = true;
-            this.afficherNumero.Location = new System.Drawing.Point(121, 96);
-            this.afficherNumero.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.afficherNumero.Location = new System.Drawing.Point(161, 118);
             this.afficherNumero.Name = "afficherNumero";
-            this.afficherNumero.Size = new System.Drawing.Size(86, 13);
+            this.afficherNumero.Size = new System.Drawing.Size(114, 17);
             this.afficherNumero.TabIndex = 12;
             this.afficherNumero.Text = "Numero Etudiant";
             // 
             // buttonFermer
             // 
-            this.buttonFermer.Location = new System.Drawing.Point(633, 396);
-            this.buttonFermer.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonFermer.Location = new System.Drawing.Point(844, 487);
+            this.buttonFermer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonFermer.Name = "buttonFermer";
-            this.buttonFermer.Size = new System.Drawing.Size(106, 30);
+            this.buttonFermer.Size = new System.Drawing.Size(141, 37);
             this.buttonFermer.TabIndex = 13;
             this.buttonFermer.Text = "Fermer";
             this.buttonFermer.UseVisualStyleBackColor = true;
@@ -195,10 +190,10 @@ namespace Exam3_AQL
             // 
             // buttonExportReleveEtudiant
             // 
-            this.buttonExportReleveEtudiant.Location = new System.Drawing.Point(457, 396);
-            this.buttonExportReleveEtudiant.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonExportReleveEtudiant.Location = new System.Drawing.Point(609, 487);
+            this.buttonExportReleveEtudiant.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonExportReleveEtudiant.Name = "buttonExportReleveEtudiant";
-            this.buttonExportReleveEtudiant.Size = new System.Drawing.Size(159, 29);
+            this.buttonExportReleveEtudiant.Size = new System.Drawing.Size(212, 36);
             this.buttonExportReleveEtudiant.TabIndex = 14;
             this.buttonExportReleveEtudiant.Text = "Exporter Revelé Etudiant";
             this.buttonExportReleveEtudiant.UseVisualStyleBackColor = true;
@@ -208,28 +203,58 @@ namespace Exam3_AQL
             // 
             this.AfficherMoyenne.AutoSize = true;
             this.AfficherMoyenne.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AfficherMoyenne.Location = new System.Drawing.Point(300, 396);
-            this.AfficherMoyenne.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.AfficherMoyenne.Location = new System.Drawing.Point(155, 417);
             this.AfficherMoyenne.Name = "AfficherMoyenne";
-            this.AfficherMoyenne.Size = new System.Drawing.Size(0, 17);
+            this.AfficherMoyenne.Size = new System.Drawing.Size(0, 20);
             this.AfficherMoyenne.TabIndex = 16;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(213, 396);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(39, 417);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(83, 17);
+            this.label6.Size = new System.Drawing.Size(95, 20);
             this.label6.TabIndex = 15;
             this.label6.Text = "Moyenne :";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(200, 417);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(25, 20);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "%";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(22, 390);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(232, 17);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "____________________________";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(22, 437);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(232, 17);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "____________________________";
             // 
             // Form2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(776, 474);
+            this.ClientSize = new System.Drawing.Size(1035, 583);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.AfficherMoyenne);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.buttonExportReleveEtudiant);
@@ -243,7 +268,7 @@ namespace Exam3_AQL
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form2";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
@@ -272,5 +297,8 @@ namespace Exam3_AQL
         private System.Windows.Forms.Button buttonExportReleveEtudiant;
         private System.Windows.Forms.Label AfficherMoyenne;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
     }
 }

@@ -13,7 +13,6 @@ namespace Exam3_AQL
         public string Nom { get; set; }
         public string Prenom { get; set; }
 
-
         public Etudiant(string nom, string prenom)
         {
             this.NumeroEtudiant = ++nombreEtudiants;

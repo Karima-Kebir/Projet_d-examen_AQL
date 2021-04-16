@@ -12,7 +12,7 @@ namespace Exam3_AQL
         public Cours UnCours { get; set; }
         public Note UneNote { get; set; }
 
-  
+
         public Donnees(Etudiant etudiant, Cours cours, Note note)
         {
             this.UnEtudiant = etudiant;
@@ -23,17 +23,17 @@ namespace Exam3_AQL
         public override string ToString()
         {
             return this.UnEtudiant.ToString() + "\n" +
-                   this.UnCours.TitreCours +" : " + this.UneNote.NoteCours+ "\n" +
-                   "_________________________________"+ "\n";
+                   this.UnCours.TitreCours + " : " + this.UneNote.NoteCours + "\n" +
+                   "_________________________________" + "\n";
         }
 
         public override bool Equals(object obj)
-        {            
+        {
             if (!(obj is Donnees)) return false;
-           
+
             Donnees d = (Donnees)obj;
-            return d.UnCours == this.UnCours && 
-                   d.UneNote==this.UneNote && 
+            return d.UnCours == this.UnCours &&
+                   d.UneNote == this.UneNote &&
                    d.UnEtudiant == this.UnEtudiant;
         }
 
@@ -42,17 +42,19 @@ namespace Exam3_AQL
             return base.GetHashCode();
         }
 
+        //ajouter une ligne de donnees (etudiant+cours+note) dans un registre(liste)
+        public List<Donnees> ajouterDansRegistre(Donnees donnees)
         {
             List<Donnees> listDonnees = new List<Donnees>();
-            if(donnees != null)
+            if (donnees != null)
             {
                 listDonnees.Add(donnees);
             }
             return listDonnees;
         }
 
-        //chercher les donnees d'un etudiant dans un registre : toutes les lignes cours + note 
-        public List<Donnees> TrouverDonneesEtudiant(List<Donnees> listDonnees, int NumEtudiant)
+        //chercher les donnees d'un etudiant dans un registre : tout les lignes cours + note 
+        public List<Donnees> rechercherDonneesEtudiant(List<Donnees> listDonnees, int NumEtudiant)
         {
             List<Donnees> donneesTrouve = new List<Donnees>();
             foreach (Donnees d in listDonnees)
@@ -72,7 +74,7 @@ namespace Exam3_AQL
             if (this.UnCours.CodeCours == this.UneNote.CodeCours)
                 note = this.UneNote.NoteCours;
 
-            return note;            
+            return note;
         }
     }
 }

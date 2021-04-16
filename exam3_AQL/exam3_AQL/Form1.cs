@@ -75,15 +75,11 @@ namespace Exam3_AQL
                 {
                     remplirComboEtudiant(ListeEtudiants);
                 }
-<<<<<<< HEAD
             }
             else
             {
                 MessageBox.Show("Vous devez saisir tous les champs !");
             }
-
-=======
->>>>>>> LailaAitAli_Branche
         }
 
 
@@ -96,7 +92,6 @@ namespace Exam3_AQL
                 comboNumEtudiant.Items.Add(listEtudiant[i].NumeroEtudiant);
             }
             comboNumEtudiant.Text = listEtudiant[0].NumeroEtudiant.ToString();
-
         }
 
         //remplir le comboBox avec les numeros des cours deja saisis
@@ -131,7 +126,7 @@ namespace Exam3_AQL
         }
 
         //chercher les donnees d'un etudiant dans un registre : tout les lignes cours + note 
-        public List<Donnees> RechercherDonneesEtudiant(List<Donnees> listDonnees, int NumEtudiant)
+        public List<Donnees> trouverDonneesEtudiant(List<Donnees> listDonnees, int NumEtudiant)
         {
             List<Donnees> donneesTrouve = new List<Donnees>();
             foreach (Donnees d in listDonnees)
@@ -288,8 +283,6 @@ namespace Exam3_AQL
                 }
             }
             else MessageBox.Show("Pas de données à exporter !");
-
-
         }
     }
 }
