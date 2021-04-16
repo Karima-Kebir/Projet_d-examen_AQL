@@ -75,12 +75,15 @@ namespace Exam3_AQL
                 {
                     remplirComboEtudiant(ListeEtudiants);
                 }
+<<<<<<< HEAD
             }
             else
             {
                 MessageBox.Show("Vous devez saisir tous les champs !");
             }
 
+=======
+>>>>>>> LailaAitAli_Branche
         }
 
 
