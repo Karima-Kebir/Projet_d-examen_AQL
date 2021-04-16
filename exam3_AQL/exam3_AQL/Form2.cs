@@ -30,11 +30,10 @@ namespace Exam3_AQL
                 afficherNumEtudiant.Text = DonneesEtudiant[0].UnEtudiant.NumeroEtudiant.ToString();
                 foreach (Donnees d in DonneesEtudiant)
                 {
-                    dataGridView1.Rows.Add(d.UnCours.NumeroCours,d.UnCours.CodeCours,d.UnCours.TitreCours,d.noteduCours());
+                    dataGridView1.Rows.Add(d.UnCours.NumeroCours,d.UnCours.CodeCours,d.UnCours.TitreCours,d.rechercherNoteduCours());
                 }
                 
-            }
-         
+            }        
         }
 
         private void buttonFermer_Click(object sender, EventArgs e)
@@ -54,7 +53,7 @@ namespace Exam3_AQL
                 foreach (Donnees d in DonneesEtudiant)
                 {
                     str += "Numero Cours : " + d.UnCours.NumeroCours +" | " + "Code Cours : "+ d.UnCours.CodeCours+ " | "+
-                           "Titre Cours : " + d.UnCours.TitreCours + " | " + "Note : " + d.noteduCours() +
+                           "Titre Cours : " + d.UnCours.TitreCours + " | " + "Note : " + d.rechercherNoteduCours() +
                         "\n_____________________________________________________________________________\n";
                 }
 
