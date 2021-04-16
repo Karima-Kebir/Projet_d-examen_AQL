@@ -131,6 +131,7 @@ namespace Exam3_AQL
             return null;
         }
 
+
         //chercher les donnees d'un etudiant dans un registre : tout les lignes cours + note 
         public List<Donnees> RechercherDonneesEtudiant(List<Donnees> listDonnees, int NumEtudiant)
         {
@@ -145,8 +146,6 @@ namespace Exam3_AQL
             }
             return donneesTrouve;
         }
-
-
 
         //Verifie si la liste contient la meme ligne pour le meme etudiant et le meme cours
         private bool verifieDoublant(List<Donnees> listedonnee, Etudiant etudiant, Cours cours)
@@ -207,8 +206,6 @@ namespace Exam3_AQL
         }
 
 
-        /*******************************************************************************************/
-        public static List<Donnees> donnees;
         private void buttonAfficherReleve_Click(object sender, EventArgs e)
         {
             try
