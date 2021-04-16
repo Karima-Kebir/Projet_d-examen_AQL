@@ -83,7 +83,6 @@ namespace Exam3_AQL
                 {
                     MessageBox.Show("Vous devez saisir tous les champs");
                 }
-          
         }
 
 
