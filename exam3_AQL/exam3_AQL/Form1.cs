@@ -127,8 +127,8 @@ namespace Exam3_AQL
             return null;
         }
 
-        //chercher les donnees d'un etudiant dans un registre : toutes les lignes cours + note 
-        public List<Donnees> trouverDonneesEtudiant(List<Donnees> listDonnees, int NumEtudiant)
+        //chercher les donnees d'un etudiant dans un registre : tout les lignes cours + note 
+        public List<Donnees> RechercherDonneesEtudiant(List<Donnees> listDonnees, int NumEtudiant)
         {
             List<Donnees> donneesTrouve = new List<Donnees>();
             foreach (Donnees d in listDonnees)
@@ -230,8 +230,6 @@ namespace Exam3_AQL
             }
         }
 
-        //Création d'une liste statique qui sera appelée dans Form2
-        public static List<Donnees> donnees;
         private void buttonAfficherReleve_Click(object sender, EventArgs e)
         {
             try
