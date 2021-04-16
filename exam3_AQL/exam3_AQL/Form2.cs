@@ -33,12 +33,11 @@ namespace Exam3_AQL
                 {
 
                     NoteEtudiant.Add(d.UneNote);
-                    dataGridView1.Rows.Add(d.UnCours.NumeroCours,d.UnCours.CodeCours,d.UnCours.TitreCours,d.noteduCours());
+                    dataGridView1.Rows.Add(d.UnCours.NumeroCours,d.UnCours.CodeCours,d.UnCours.TitreCours,d.rechercherNoteduCours());
                 }
                 double moyenneEtudiant = Math.Round(calculerMoyenne(NoteEtudiant));
                 AfficherMoyenne.Text = moyenneEtudiant.ToString();
-            }
-         
+            }         
         }
 
         private void buttonFermer_Click(object sender, EventArgs e)
@@ -47,8 +46,7 @@ namespace Exam3_AQL
         }
 
         private void buttonExportReleveEtudiant_Click(object sender, EventArgs e)
-        {
-            
+        {           
             string str = "";
 
             if (DonneesEtudiant.Count() != 0)
@@ -59,13 +57,12 @@ namespace Exam3_AQL
                 {
 
                     str += "Numero Cours : " + d.UnCours.NumeroCours + " | " + "Code Cours : " + d.UnCours.CodeCours + " | " +
-                           "Titre Cours : " + d.UnCours.TitreCours + " | " + "Note : " + d.noteduCours() +
+                           "Titre Cours : " + d.UnCours.TitreCours + " | " + "Note : " + d.rechercherNoteduCours() +
                         "\n_____________________________________________________________________________\n";
                        
                 }
                 str += "\n==============================================================================" +
                     "\nMoyenne = " + calculerMoyenne(NoteEtudiant).ToString();
-
             }
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "WAP Files (*.txt)|*.txt";
@@ -93,7 +90,11 @@ namespace Exam3_AQL
             }
             return resultat / listeNotes.Count();
         }
-           
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
         }
     }
+}
 

@@ -11,7 +11,6 @@ namespace Exam3_AQL
         public int NumeroEtudiant { get; set; }
         public string CodeCours { get; set; }
         public double NoteCours { get; set; }
-
   
         public Note(int numeroEtudiant, string codeCours, double noteCours)
         {
@@ -20,14 +19,12 @@ namespace Exam3_AQL
             this.NoteCours = noteCours;
         }
 
-
         public override string ToString()
         {
             return "Numéro Etudiant : " + this.NumeroEtudiant + "\n" +
                     "Code Cours : " + this.CodeCours + "\n" +
                    "Note Cours : " + this.NoteCours;
         }
-
 
         public override bool Equals(object obj)
         {
