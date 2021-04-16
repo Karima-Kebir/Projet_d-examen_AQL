@@ -44,6 +44,8 @@ namespace Exam3_AQL
             this.afficherNumero = new System.Windows.Forms.Label();
             this.buttonFermer = new System.Windows.Forms.Button();
             this.buttonExportReleveEtudiant = new System.Windows.Forms.Button();
+            this.AfficherMoyenne = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -130,7 +132,7 @@ namespace Exam3_AQL
             this.Column3,
             this.Column4});
             this.dataGridView1.Location = new System.Drawing.Point(214, 96);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
@@ -183,7 +185,7 @@ namespace Exam3_AQL
             // buttonFermer
             // 
             this.buttonFermer.Location = new System.Drawing.Point(633, 396);
-            this.buttonFermer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonFermer.Margin = new System.Windows.Forms.Padding(2);
             this.buttonFermer.Name = "buttonFermer";
             this.buttonFermer.Size = new System.Drawing.Size(106, 30);
             this.buttonFermer.TabIndex = 13;
@@ -194,7 +196,7 @@ namespace Exam3_AQL
             // buttonExportReleveEtudiant
             // 
             this.buttonExportReleveEtudiant.Location = new System.Drawing.Point(457, 396);
-            this.buttonExportReleveEtudiant.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonExportReleveEtudiant.Margin = new System.Windows.Forms.Padding(2);
             this.buttonExportReleveEtudiant.Name = "buttonExportReleveEtudiant";
             this.buttonExportReleveEtudiant.Size = new System.Drawing.Size(159, 29);
             this.buttonExportReleveEtudiant.TabIndex = 14;
@@ -202,11 +204,34 @@ namespace Exam3_AQL
             this.buttonExportReleveEtudiant.UseVisualStyleBackColor = true;
             this.buttonExportReleveEtudiant.Click += new System.EventHandler(this.buttonExportReleveEtudiant_Click);
             // 
+            // AfficherMoyenne
+            // 
+            this.AfficherMoyenne.AutoSize = true;
+            this.AfficherMoyenne.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AfficherMoyenne.Location = new System.Drawing.Point(300, 396);
+            this.AfficherMoyenne.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.AfficherMoyenne.Name = "AfficherMoyenne";
+            this.AfficherMoyenne.Size = new System.Drawing.Size(0, 17);
+            this.AfficherMoyenne.TabIndex = 16;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(213, 396);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(83, 17);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "Moyenne :";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(776, 474);
+            this.Controls.Add(this.AfficherMoyenne);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.buttonExportReleveEtudiant);
             this.Controls.Add(this.buttonFermer);
             this.Controls.Add(this.afficherNumero);
@@ -218,7 +243,7 @@ namespace Exam3_AQL
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form2";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
@@ -245,5 +270,7 @@ namespace Exam3_AQL
         private System.Windows.Forms.Label afficherNumero;
         private System.Windows.Forms.Button buttonFermer;
         private System.Windows.Forms.Button buttonExportReleveEtudiant;
+        private System.Windows.Forms.Label AfficherMoyenne;
+        private System.Windows.Forms.Label label6;
     }
 }
