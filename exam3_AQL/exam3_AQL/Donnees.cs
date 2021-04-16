@@ -42,8 +42,6 @@ namespace Exam3_AQL
             return base.GetHashCode();
         }
 
-        //ajouter une ligne de donnees (etudiant+cours+note) dans un registre(liste)
-        public List<Donnees> ajouterDansRegistre(Donnees donnees)
         {
             List<Donnees> listDonnees = new List<Donnees>();
             if(donnees != null)
@@ -53,8 +51,8 @@ namespace Exam3_AQL
             return listDonnees;
         }
 
-        //chercher les donnees d'un etudiant dans un registre : tout les lignes cours + note 
-        public List<Donnees> rechercherDonneesEtudiant(List<Donnees> listDonnees, int NumEtudiant)
+        //chercher les donnees d'un etudiant dans un registre : toutes les lignes cours + note 
+        public List<Donnees> TrouverDonneesEtudiant(List<Donnees> listDonnees, int NumEtudiant)
         {
             List<Donnees> donneesTrouve = new List<Donnees>();
             foreach (Donnees d in listDonnees)

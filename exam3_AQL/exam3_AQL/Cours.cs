@@ -21,7 +21,6 @@ namespace Exam3_AQL
             this.TitreCours = titreCours;           
         }
 
-        // Méthode ToString permettant de convertir l'objet cours vers une chaîne de caractère
         public override string ToString()
         {
             return  "Numéro de cours : " + this.NumeroCours + "\n" +
@@ -29,7 +28,6 @@ namespace Exam3_AQL
                     "Titre : " + this.TitreCours;
         }
 
-        // Méthode ToString permettant de comparer deux cours
         public override bool Equals(object obj)
         {
             if (!(obj is Cours)) return false;

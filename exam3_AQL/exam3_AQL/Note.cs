@@ -20,11 +20,7 @@ namespace Exam3_AQL
             this.NoteCours = noteCours;
         }
 
-<<<<<<< HEAD
-        // Méthode ToString permettant de convertir l'objet cours vers une chaîne de caractère
-=======
 
->>>>>>> LailaAitAli_Branche
         public override string ToString()
         {
             return "Numéro Etudiant : " + this.NumeroEtudiant + "\n" +
@@ -32,11 +28,7 @@ namespace Exam3_AQL
                    "Note Cours : " + this.NoteCours;
         }
 
-<<<<<<< HEAD
-        // Méthode Equals permettant de comparer deux Notes
-=======
 
->>>>>>> LailaAitAli_Branche
         public override bool Equals(object obj)
         {
             if (!(obj is Note)) return false;
